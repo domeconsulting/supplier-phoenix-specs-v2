@@ -59,6 +59,7 @@ LastMinute | S / N (Si/No) | Indica si se trata de una reserva realizada a trave
 SEMCODE | *String* | Indica el código de SEM 
 BookingEngineCode | *Integer* | Indica el código de motor de la web
 WebsiteUrl | *String* | Indica la url de la web donde se ha realizado la reserva.
+CreationSystemBudget | *String* | Indica el sistema de creacion del presupuesto.
 IpAdress | *String* | Indica la ip desde la cual se ha realizado la reserva.
 Country | *String* | Indica el pais desde el cual se ha realizado la reserva. (ISO 3166)
 ReferredByUrl | *String* | Indica la Url desde la cual ha llegado la reserva.

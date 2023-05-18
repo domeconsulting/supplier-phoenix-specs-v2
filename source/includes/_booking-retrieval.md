@@ -76,6 +76,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
     <booking>
         <reference>EPL10032017140800-SALE</reference>
         <creationDate>10/03/2017 14:15</creationDate>
+		<modificationDate>10/03/2017 14:17</modificationDate>
         <checkIn>15/04/2017</checkIn>
         <checkOut>18/04/2017</checkOut>
         <status>Confirmed</status>
@@ -90,7 +91,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
             <mail>elena_ballester1234@mail.com</mail>
             <phone>003466667788</phone>
         </endCustomer>
-	<commission>
+		<commission>
     	    <serviceCommission>
                 <serviceId>1</serviceId>
                 <commissionAmount>0</commissionAmount>
@@ -134,13 +135,15 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
             </roomRateDay>
             <guest id="1">
                 <type>Adult</type>
-		<name>Juan Ballester</name>
+				<name>Juan Ballester</name>
                 <amount>175.00</amount>
+				<age>33</age>
             </guest>
             <guest id="2">
                 <type>Adult</type>
-		<name>Elena Ballester</name>
+				<name>Elena Ballester</name>
                 <amount>175.00</amount>
+				<age>33</age>
             </guest>
         </bookingRoom>
         <bookingRoom id="2">
@@ -174,15 +177,17 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
             </roomRateDay>
             <guest id="3">
                 <type>Adult</type>
-		<name>Elena Ballester</name>
-		<gender>Female</gender>
+				<name>Elena Ballester</name>
+				<gender>Female</gender>
                 <amount>100.00</amount>
+				<age>33</age>
             </guest>
             <guest id="4">
                 <type>Child</type>
-		<name>Elena Ballester</name>
-		<gender>Female</gender>
+				<name>Elena Ballester</name>
+				<gender>Female</gender>
                 <amount>50.00</amount>
+				<age>33</age>
             </guest>
         </bookingRoom>
         <bookingSupplement>
@@ -191,6 +196,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
             <description>Suplemento Parking toda la estancia</description>
             <checkIn>15/04/2017</checkIn>
             <checkOut>17/04/2017</checkOut>
+			<bookingRoomId>1</bookingRoomId>
             <amount>50.00</amount>
         </bookingSupplement>
         <remark>
@@ -201,8 +207,9 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
         </remark>
         <remark>
             <code>GENERAL</code>
-            <from>Client</from>
+            <from>Client</from>					
             <to>Hotel</to>
+			<bookingRoomId>2</bookingRoomId>	
             <text>Por favor, habitaciones no fumadores</text>
         </remark>
         <bookingPayment>
@@ -276,6 +283,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
     "booking": {
       "reference": "EPL10032017140800-SALE",
       "creationDate": "10/03/2017 14:15",
+	  "modificationDate": "10/03/2017 14:17",
       "checkIn": "15/04/2017",
       "checkOut": "18/04/2017",
       "status": "Confirmed",
@@ -327,15 +335,17 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
           "guest": [
             {
               "id": "1",
-	      "name": "Juan Ballester",
+			  "name": "Juan Ballester",
               "type": "Adult",
-              "amount": "175.00"
+              "amount": "175.00",
+			  "age": "33"
             },
             {
               "id": "2",
-	      "name": "Elena Ballester",
+	          "name": "Elena Ballester",
               "type": "Adult",
-              "amount": "175.00"
+              "amount": "175.00",
+			  "age": "33"
             }
           ]
         },
@@ -373,17 +383,19 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
           "guest": [
             {
               "id": "3",
-	      "name": "Elena Ballester",
+	          "name": "Elena Ballester",
               "type": "Adult",
-	      "gender": "Female",
-              "amount": "100.00"
+	          "gender": "Female",
+              "amount": "100.00",
+			  "age": "33"
             },
             {
               "id": "4",
-	      "name": "Elena Ballester",
-	      "gender": "Female",
+			  "name": "Elena Ballester",
+	          "gender": "Female",
               "type": "Child",
-              "amount": "50.00"
+              "amount": "50.00",
+			  "age": "33"
             }
           ]
         }
@@ -396,6 +408,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
         "description": "Suplemento Parking toda la estancia",
         "checkIn": "15/04/2017",
         "checkOut": "17/04/2017",
+		"bookingRoomId" : "1",
         "amount": "50.00"
       },
       "remark": [
@@ -409,6 +422,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
           "code": "GENERAL",
           "from": "Client",
           "to": "Hotel",
+		  "bookingRoomId" : "2",
           "text": "Por favor, habitaciones no fumadores"
         }
       ],            
@@ -526,6 +540,7 @@ booking[] | **Booking** | No | Información de una reserva de hotel
 ↳↳↳ birthDate| *Date* | No | Fecha de nacimiento
 ↳↳↳ nationality[]| *String* | No | Nacionalidad del huésped. Se incorpora el código ISO-3166. Ejemplo: <nationality>España (ES)</nationality>.
 ↳↳↳ document[]| *Document* | No | Información relativa a los documentos aportados por el huésped
+↳↳↳ age| *String* | No | Edad del huésped
 ↳↳↳↳ typeDocument| *String* | No | Tipo del documento aportado ('D': Dni, 'E': Nie y 'P':Pasaporte)
 ↳↳↳↳ numberDocument| *String* | No | Número del documento aportado
 ↳↳↳↳ expeditionDate| *Date* | No | Fecha de expedición del documento (dd/MM/yyyy)
@@ -574,6 +589,13 @@ booking[] | **Booking** | No | Información de una reserva de hotel
 ↳↳↳↳↳ companyName| *String* | No | Indica el nombre de la compañía que emite el billete
 ↳↳↳↳↳ flightNumber| *String* | No | Indica el número de vuelo
 ↳↳↳↳↳ flightTime| *Calendar* | No | Indica la fecha y hora del vuelo (dd/MM/yyyy HH:mm)
+↳ remark| **Remark** | No | Notas de la reserva
+↳↳ code| *Enum* | Si | Código de la nota (ArrivalTime, Attachment, Informative, Warning, General)
+↳↳ from| *Enum* | Si | Indica quien notifica la nota (Hotel, Client, NetInfo)
+↳↳ to| *Enum* | Si | Indica para quien es la nota (Hotel, Client, NetInfo)
+↳↳ bookingRoomId| *String* | No | Indica a que habitación hace referencia la nota
+↳↳ text| *String* | Si | Texto de la nota
+↳↳ customerReference| *String* | No | Referencia del cliente
 ↳ bookingPayment| **BookingPayment** | No | Información del último pago de la reserva<sup>1</sup>
 ↳↳ modality| *Enum* | Sí | Modalidad de pago (Establishment / Inmediate / Deferred / CancelPenalty / Instalment / ExternManagement)
 ↳↳ internalModalityName| *String* | No | Descripcion interna de la modalidad de pago
