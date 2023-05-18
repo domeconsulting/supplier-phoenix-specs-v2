@@ -72,160 +72,211 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 ````xml
 <?xml version="1.0" encoding="UTF-8"?>
 <BookingRetrievalResponse>
-    <sessionId>SUP#FOO#123456789</sessionId>
-    <booking>
-        <reference>EPL10032017140800-SALE</reference>
-        <creationDate>10/03/2017 14:15</creationDate>
+	<sessionId>SUP#FOO#123456789</sessionId>
+	<booking>
+		<reference>EPL10032017140800-SALE</reference>
+		<creationDate>10/03/2017 14:15</creationDate>
 		<modificationDate>10/03/2017 14:17</modificationDate>
-        <checkIn>15/04/2017</checkIn>
-        <checkOut>18/04/2017</checkOut>
-        <status>Confirmed</status>
-        <amount>550.00</amount>
-        <bookingClient>
-            <clientCode>EPL</clientCode>
-            <clientName>Europlayas</clientName>
-            <clientReference>AA45645D55</clientReference>
-        </bookingClient>
-        <endCustomer>
-            <name>Elena Ballester</name>
-            <mail>elena_ballester1234@mail.com</mail>
-            <phone>003466667788</phone>
-        </endCustomer>
+		<country>ES</country>
+		<checkIn>15/04/2017</checkIn>
+		<checkOut>18/04/2017</checkOut>
+		<status>Confirmed</status>
+		<amount>550.00</amount>
+		<amountToInvoice>625.25</amountToInvoice>
+		<bookingClient>
+			<clientCode>EPL</clientCode>
+			<clientName>Europlayas</clientName>
+			<fiscalClientName>Europlayas S.L.</fiscalClientName>
+			<addressClient>Parc Bit, 14</addressClient>
+			<postalClientCode>07001</postalClientCode>
+			<countryClient>ES</countryClient>
+			<cifClient>A00000000</cifClient>
+			<emailClient>europlayas@test.com</emailClient>
+			<clientReference>AA45645D55</clientReference>
+		</bookingClient>
+		<endCustomer>
+			<name>Elena Ballester</name>
+			<firstName>Elena</firstName>
+			<lastName>Ballester</lastName>
+			<mail>elena_ballester1234@mail.com</mail>
+			<phone>003466667788</phone>
+			<document>
+				<typeDocument>Passport</typeDocument>
+				<numberDocument>A123456789</numberDocument>
+			</document>
+		</endCustomer>
 		<commission>
-    	    <serviceCommission>
-                <serviceId>1</serviceId>
-                <commissionAmount>0</commissionAmount>
-                <commissionPercentage>0</commissionPercentage>
-            </serviceCommission>
-            <serviceCommission>
-                <serviceId>2</serviceId>
-                <commissionAmount>0</commissionAmount>
-                <commissionPercentage>0</commissionPercentage>
-            </serviceCommission>
-        </commission>
-        <hotelCode>1234</hotelCode>
-        <bookingRoom id="1">
-            <checkIn>15/04/2017</checkIn>
-            <checkOut>17/04/2017</checkOut>
-            <status>Confirmed</status>
-            <roomCode>DBL#STD</roomCode>
+			<serviceCommission>
+				<serviceId>1</serviceId>
+				<commissionAmount>0</commissionAmount>
+				<commissionPercentage>0</commissionPercentage>
+			</serviceCommission>
+			<serviceCommission>
+				<serviceId>2</serviceId>
+				<commissionAmount>0</commissionAmount>
+				<commissionPercentage>0</commissionPercentage>
+			</serviceCommission>
+		</commission>
+		<hotelCode>1234</hotelCode>
+		<currencyCode>EUR</currencyCode>
+		<bookingRoom id="1">
+			<checkIn>15/04/2017</checkIn>
+			<checkOut>17/04/2017</checkOut>
+			<status>Confirmed</status>
+			<roomCode>DBL#STD</roomCode>
 			<internalRoomName>Nombre interno de la habitacion DBL#STD</internalRoomName>
-            <mealPlanCode>BB</mealPlanCode>
-            <amount>350.00</amount>
-            <roomRateDay>
-                <day>15/04/2017</day>
-                <rateCode>BASE</rateCode>
-				<rateName>BASE VERANO<rateName>
+			<mealPlanCode>BB</mealPlanCode>
+			<amount>350.00</amount>
+			<totalRoomAmount>350.00</totalRoomAmount>
+			<commissionRoomAmount>0.0</commissionRoomAmount>
+			<netRoomAmount>350.00</netRoomAmount>
+			<amountRoomToInvoice>350.00</amountRoomToInvoice>
+			<roomRateDay>
+				<day>15/04/2017</day>
+				<rateCode>BASE</rateCode>
+				<rateName>BASE VERANO</rateName>
 				<internalRateName>BASEVER</internalRateName>
-                <amount>116.67</amount>
-            </roomRateDay>
-            <roomRateDay>
-                <day>16/04/2017</day>
-                <rateCode>BASE</rateCode>
-				<rateName>BASE VERANO<rateName>
-				<internalRateName>BASEVER</internalRateName>		
-                <amount>116.67</amount>
-            </roomRateDay>
-            <roomRateDay>
-                <day>17/04/2017</day>
-                <rateCode>BASE</rateCode>
-				<rateName>BASE VERANO<rateName>
-				<internalRateName>BASEVER</internalRateName>		
-                <amount>116.67</amount>
-            </roomRateDay>
-            <guest id="1">
-                <type>Adult</type>
+				<amount>116.67</amount>
+			</roomRateDay>
+			<roomRateDay>
+				<day>16/04/2017</day>
+				<rateCode>BASE</rateCode>
+				<rateName>BASE VERANO</rateName>
+				<internalRateName>BASEVER</internalRateName>
+				<amount>116.67</amount>
+			</roomRateDay>
+			<roomRateDay>
+				<day>17/04/2017</day>
+				<rateCode>BASE</rateCode>
+				<rateName>BASE VERANO</rateName>
+				<internalRateName>BASEVER</internalRateName>
+				<amount>116.67</amount>
+			</roomRateDay>
+			<guest id="1">
+				<type>Adult</type>
 				<name>Juan Ballester</name>
-                <amount>175.00</amount>
+				<firstName>Juan</firstName>
+				<lastName>Ballester</lastName>
+				<birthDate>19/06/1993</birthDate>
+				<amount>175.00</amount>
 				<age>33</age>
-            </guest>
-            <guest id="2">
-                <type>Adult</type>
+			</guest>
+			<guest id="2">
+				<type>Adult</type>
 				<name>Elena Ballester</name>
-                <amount>175.00</amount>
+				<firstName>Elena</firstName>
+				<lastName>Ballester</lastName>
+				<birthDate>23/08/1993</birthDate>
+				<amount>175.00</amount>
 				<age>33</age>
-            </guest>
-        </bookingRoom>
-        <bookingRoom id="2">
-            <checkIn>15/04/2017</checkIn>
-            <checkOut>17/04/2017</checkOut>
-            <status>Confirmed</status>
-            <roomCode>SGL#STD</roomCode>
-			<internalRoomName>Nombre interno de la habitacion SGL#STD</internalRoomName>			
-            <mealPlanCode>BB</mealPlanCode>
-            <amount>150.00</amount>
-            <roomRateDay>
-                <day>15/04/2017</day>
-                <rateCode>BASE</rateCode>
-				<rateName>BASE VERANO<rateName>
+			</guest>
+			<cancellationData>
+				<cancelPenaltyPolicy id="5">
+					<date>18/05/2023 00:00</date>
+					<timeRelevant>false</timeRelevant>
+					<amount>625.25</amount>
+				</cancelPenaltyPolicy>
+			</cancellationData>
+		</bookingRoom>
+		<bookingRoom id="2">
+			<checkIn>15/04/2017</checkIn>
+			<checkOut>17/04/2017</checkOut>
+			<status>Confirmed</status>
+			<roomCode>SGL#STD</roomCode>
+			<totalRoomAmount>150.00</totalRoomAmount>
+			<commissionRoomAmount>0.0</commissionRoomAmount>
+			<netRoomAmount>150.00</netRoomAmount>
+			<amountRoomToInvoice>150.00</amountRoomToInvoice>
+			<internalRoomName>Nombre interno de la habitacion SGL#STD</internalRoomName>
+			<mealPlanCode>BB</mealPlanCode>
+			<amount>150.00</amount>
+			<roomRateDay>
+				<day>15/04/2017</day>
+				<rateCode>BASE</rateCode>
+				<rateName>BASE VERANO</rateName>
 				<internalRateName>BASEVER</internalRateName>
-                <amount>50.00</amount>
-            </roomRateDay>
-            <roomRateDay>
-                <day>16/04/2017</day>
-                <rateCode>BASE</rateCode>
-				<rateName>BASE VERANO<rateName>
-				<internalRateName>BASEVER</internalRateName>		
-                <amount>50.00</amount>
-            </roomRateDay>
-            <roomRateDay>
-                <day>17/04/2017</day>
-                <rateCode>BASE</rateCode>
-				<rateName>BASE VERANO<rateName>
-				<internalRateName>BASEVER</internalRateName>		
-                <amount>50.00</amount>
-            </roomRateDay>
-            <guest id="3">
-                <type>Adult</type>
+				<amount>50.00</amount>
+			</roomRateDay>
+			<roomRateDay>
+				<day>16/04/2017</day>
+				<rateCode>BASE</rateCode>
+				<rateName>BASE VERANO</rateName>
+				<internalRateName>BASEVER</internalRateName>
+				<amount>50.00</amount>
+			</roomRateDay>
+			<roomRateDay>
+				<day>17/04/2017</day>
+				<rateCode>BASE</rateCode>
+				<rateName>BASE VERANO</rateName>
+				<internalRateName>BASEVER</internalRateName>
+				<amount>50.00</amount>
+			</roomRateDay>
+			<guest id="3">
+				<type>Adult</type>
 				<name>Elena Ballester</name>
+				<firstName>Elena</firstName>
+				<lastName>Ballester</lastName>
+				<birthDate>23/08/1993</birthDate>
 				<gender>Female</gender>
-                <amount>100.00</amount>
+				<amount>100.00</amount>
 				<age>33</age>
-            </guest>
-            <guest id="4">
-                <type>Child</type>
-				<name>Elena Ballester</name>
+			</guest>
+			<guest id="4">
+				<type>Child</type>
+				<name>Maria Ballester</name>
+				<firstName>Maria</firstName>
+				<lastName>Maria</lastName>
+				<birthDate>25/03/2015</birthDate>
 				<gender>Female</gender>
-                <amount>50.00</amount>
+				<amount>50.00</amount>
 				<age>33</age>
-            </guest>
-        </bookingRoom>
-        <bookingSupplement>
-            <code>PKG</code>
-            <code>Parking</code>
-            <description>Suplemento Parking toda la estancia</description>
-            <checkIn>15/04/2017</checkIn>
-            <checkOut>17/04/2017</checkOut>
+			</guest>
+		</bookingRoom>
+		<bookingSupplement>
+			<code>[EtT]Supplement(PpT)DEMOHTT@30621@20054@1@EUR</code>
+			<name>PARK - 1</name>
+			<typeSupplement>SalePolicy</typeSupplement>
+			<internalTypeSupplement>SPS</internalTypeSupplement>
+			<description>Suplemento Parking toda la estancia</description>
+			<checkIn>15/04/2017</checkIn>
+			<checkOut>17/04/2017</checkOut>
 			<bookingRoomId>1</bookingRoomId>
-            <amount>50.00</amount>
-        </bookingSupplement>
-        <remark>
-            <code>GENERAL</code>
-            <from>Hotel</from>
-            <to>Client</to>
-            <text>Piscina cerrada hasta el 15/04/2017</text>
-        </remark>
-        <remark>
-            <code>GENERAL</code>
-            <from>Client</from>					
-            <to>Hotel</to>
-			<bookingRoomId>2</bookingRoomId>	
-            <text>Por favor, habitaciones no fumadores</text>
-        </remark>
-        <bookingPayment>
-            <modality>Establishment</modality>
+			<amount>50.00</amount>
+			<mandatory>true</mandatory>
+		</bookingSupplement>
+		<remark>
+			<code>Informative</code>
+			<from>Hotel</from>
+			<to>Client</to>
+			<text>Piscina cerrada hasta el 15/04/2017</text>
+		</remark>
+		<remark>
+			<code>Informative</code>
+			<from>Client</from>
+			<to>Hotel</to>
+			<bookingRoomId>2</bookingRoomId>
+			<text>Por favor, habitaciones no fumadores</text>
+		</remark>
+		<remark>
+			<code>ArrivalTime</code>
+			<from>Client</from>
+			<to>Hotel</to>
+			<text>12:00</text>
+		</remark>
+		<bookingPayment>
+			<modality>Establishment</modality>
 			<internalModalityName>Descripcion interna modalidad de pago</internalModalityName>
-            <type>PrepaidCard</type>
-	    <otaType>PC</otaType>
-	    <description>Tarjeta de prepago</description>
-            <status>Pending</status>
-        </bookingPayment>
-        <paymentCardDetail>
-            <holder>Elena Ballester</holder>
-            <number>4111111111111111</number>
-            <expiryDate>01/01/2020</expiryDate>
-            <securityCode>123</securityCode>
-        </paymentCardDetail>
+			<type>PrepaidCard</type>
+			<otaType>PC</otaType>
+			<description>Tarjeta de prepago</description>
+			<status>Pending</status>
+		</bookingPayment>
+		<paymentCardDetail>
+			<holder>Elena Ballester</holder>
+			<number>4111111111111111</number>
+			<expiryDate>01/01/2020</expiryDate>
+			<securityCode>123</securityCode>
+		</paymentCardDetail>
 		<paymentDetail>
 			<action>Charge</action>
 			<paymentStatus>Ok</paymentStatus>
@@ -233,18 +284,18 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 			<date>24/01/2019 17:18</date>
 			<amount>2635.663</amount>
 			<externalManagedDetail>
-			<externalSystemCode>TARJETA VIRTUAL</externalSystemCode>
-			<externalReference>5227</externalReference>
-			<status>Ok</status>
+				<externalSystemCode>TARJETA VIRTUAL</externalSystemCode>
+				<externalReference>5227</externalReference>
+				<status>Ok</status>
 			</externalManagedDetail>
 			<breakdown>
-                <bookingRoomId>1</bookingRoomId>
-                <amount>350.0</amount>
-            </breakdown>
-            <breakdown>
-                <bookingRoomId>2</bookingRoomId>
-                <amount>150.0</amount>
-            </breakdown>
+				<bookingRoomId>1</bookingRoomId>
+				<amount>350.0</amount>
+			</breakdown>
+			<breakdown>
+				<bookingRoomId>2</bookingRoomId>
+				<amount>150.0</amount>
+			</breakdown>
 		</paymentDetail>
 		<paymentDetail>
 			<action>Charge</action>
@@ -264,15 +315,15 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 				</card>
 			</prepaidCardDetail>
 			<breakdown>
-                <bookingRoomId>1</bookingRoomId>
-                <amount>350.0</amount>
-            </breakdown>
-            <breakdown>
-                <bookingRoomId>2</bookingRoomId>
-                <amount>150.0</amount>
-            </breakdown>			
+				<bookingRoomId>1</bookingRoomId>
+				<amount>350.0</amount>
+			</breakdown>
+			<breakdown>
+				<bookingRoomId>2</bookingRoomId>
+				<amount>150.0</amount>
+			</breakdown>
 		</paymentDetail>
-    </booking>
+	</booking>
 </BookingRetrievalResponse>
 ````
 
@@ -284,21 +335,47 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
       "reference": "EPL10032017140800-SALE",
       "creationDate": "10/03/2017 14:15",
 	  "modificationDate": "10/03/2017 14:17",
+	  "country": "ES",
       "checkIn": "15/04/2017",
       "checkOut": "18/04/2017",
       "status": "Confirmed",
       "amount": "550.00",
+	  "amountToInvoice": "550.00",
       "bookingClient": {
         "clientCode": "EPL",
         "clientName": "Europlayas",
+		"fiscalClientName": "Europlayas S.L.",
+		"addressClient": "Parc Bit, 14", 
+		"postalClientCode": "07001",
+		"countryClient": "ES",
+		"cifClient": "A0000000",
+		"emailClient": "europlayas@test.com",
         "clientReference": "AA45645D55"
       },
       "endCustomer": {
         "name": "Elena Ballester",
+		"firstName": "Elena",
+		"lastName": "Ballester",		
         "mail": "elena_ballester1234@mail.com",
-        "phone": "003466667788"
+        "phone": "003466667788",
+		"document": {
+			"typeDocument": "Passport",
+			"numberDocument": "A123456789"
+		}
       },
-      "hotelCode": "1234",
+      "commission": {
+		  "serviceCommission": [{
+			"serviceId": "1",
+			"commissionAmount": "0",
+			"commissionPercentage": "0"
+		  }, {
+			"serviceId": "2",
+			"commissionAmount": "0",
+			"commissionPercentage": "0"			  
+		  }]		  
+	  },
+	  "hotelCode": "1234",
+	  "currencyCode": "EUR",
       "bookingRoom": [
         {
           "id": "1",
@@ -309,6 +386,10 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 		  "internalRoomName" : "Nombre interno de la habitacion DBL#STD",
           "mealPlanCode": "BB",
           "amount": "350.00",
+		  "totalRoomAmount": "350.00",
+		  "commissionRoomAmount": "0.0",
+		  "netRoomAmount": "350.00",
+		  "amountRoomToInvoice": "350.00",
           "roomRateDay": [
             {
               "day": "15/04/2017",
@@ -336,6 +417,9 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
             {
               "id": "1",
 			  "name": "Juan Ballester",
+			  "firstName": "Juan", 
+			  "lastName": "Ballester",
+			  "birthDate": "19/06/1993",
               "type": "Adult",
               "amount": "175.00",
 			  "age": "33"
@@ -343,11 +427,21 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
             {
               "id": "2",
 	          "name": "Elena Ballester",
+			  "firstName": "Elena",
+			  "lastName": "Ballester",
+			  "birthDate": "23/08/1993",
               "type": "Adult",
               "amount": "175.00",
 			  "age": "33"
             }
-          ]
+          ], 
+		  "cancellationData": {
+			  "cancelPenaltyPolicy":[{
+				"id": "5",
+				"timeRelevant": "false", 
+				"amount": "350.00"
+			  }]				  
+		  }
         },
         {
           "id": "2",
@@ -356,6 +450,10 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
           "status": "Confirmed",
           "roomCode": "SGL#STD",
           "mealPlanCode": "BB",
+		  "totalRoomAmount": "150.00",
+		  "commissionRoomAmount": "0.0",
+		  "netRoomAmount": "150.00",
+		  "amountRoomToInvoice": "150.00",
           "amount": "150.00",
           "roomRateDay": [
             {
@@ -384,6 +482,9 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
             {
               "id": "3",
 	          "name": "Elena Ballester",
+			  "firstName": "Elena",
+			  "lastName": "Ballester",
+			  "birthDate": "23/08/1993",
               "type": "Adult",
 	          "gender": "Female",
               "amount": "100.00",
@@ -391,7 +492,10 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
             },
             {
               "id": "4",
-			  "name": "Elena Ballester",
+			  "name": "Maria Ballester",
+			  "firstName": "Maria",
+			  "lastName": "Ballester",
+			  "birthDate": "25/03/2015",
 	          "gender": "Female",
               "type": "Child",
               "amount": "50.00",
@@ -401,37 +505,44 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
         }
       ],
       "bookingSupplement": {
-        "code": [
-          "PKG",
-          "Parking"
-        ],
+        "code": "[EtT]Supplement(PpT)DEMOHTT@30621@20054@1@EUR",
+		"name" : "PARK - 1",
+		"typeSupplement": "SalePolicy",
+		"internalTypeSupplement": "SPS",
         "description": "Suplemento Parking toda la estancia",
         "checkIn": "15/04/2017",
         "checkOut": "17/04/2017",
 		"bookingRoomId" : "1",
-        "amount": "50.00"
+        "amount": "50.00",
+		"mandatory": "true"
       },
       "remark": [
         {
-          "code": "GENERAL",
+          "code": "Informative",
           "from": "Hotel",
           "to": "Client",
           "text": "Piscina cerrada hasta el 15/04/2017"
         },
         {
-          "code": "GENERAL",
+          "code": "Informative",
           "from": "Client",
           "to": "Hotel",
 		  "bookingRoomId" : "2",
           "text": "Por favor, habitaciones no fumadores"
-        }
+        },
+		{
+		  "code": "ArrivalTime",
+          "from": "Client",
+          "to": "Hotel",
+          "text": "12:00"			
+		}
       ],            
       "bookingPayment": {
         "modality": "Establishment",
 		"internalModalityName" : "Descripcion interna modalidad de pago",
         "type": "WarrantyCard",
-	"otaType": "PC",
-	"description": "Tarjeta de garantía",
+		"otaType": "PC",
+		"description": "Tarjeta de garantía",
         "status": "Pending"
       },
       "paymentCardDetail": {
@@ -439,7 +550,49 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
         "number": "4111111111111111",
         "expiryDate": "01/01/2020",
         "securityCode": "123"
-      }
+      }, 
+	  "paymentDetail": [{
+		  "action": "Charge",
+		  "paymentStatus" : "Ok",
+		  "type": "ExternalManaged",
+		  "date": "24/01/2019 17:18",
+		  "amount": "2635.663",
+		  "externalManagedDetail": {
+			  "externalSystemCode": "TARJETA VIRTUAL",
+			  "externalReference": "5227",
+			  "status": "Ok"
+		  }, 
+		  "breakdown": [{
+			  "bookingRoomId": "1",
+			  "amount": "350.0"
+		  }, {
+			  "bookingRoomId": "2",
+			  "amount": "150.0"
+		  }]
+	  }, {
+		  "action": "Charge",
+		  "paymentStatus" : "Ok",
+		  "type": "ExternalManaged",
+		  "date": "24/01/2019 17:18",
+		  "amount": "2635.663",
+		  "prepaidCardDetail": {
+			  "status": "Pending",
+			  "card": {
+				  "cardTypeCode": "VISA",
+				  "holder": "Elena Ballester", 
+				  "number" : "4111111111111111",
+				  "expiryDate": "01/01/2020"
+				  "securityCode": "123"
+			  }
+		  },
+		  "breakdown": [{
+			  "bookingRoomId": "1",
+			  "amount": "350.0"
+		  }, {
+			  "bookingRoomId": "2",
+			  "amount": "150.0"
+		  }]
+	  }]
     }
   }
 }

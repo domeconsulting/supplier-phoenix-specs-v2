@@ -5,7 +5,7 @@ Bienvenido a la documentación online de las especificaciones PUSH de la API <b>
 A través de esta API PUSH el proveedor podrá gestionar las tarifas e inventario de la plataforma Hotetec a través de XML, así como descargar las reservas realizadas sobre dichas tarifas.
 
 La creación y configuración inicial del hotel, así como de sus tarifas e inventario, se realizará a través de la extranet web
-[http://xml.hotetec.com](http://xml.hotetec.com). Una vez realizada la configuración, se podrá utilizar la API PUSH Supplier-Phoenix para realizar
+[http://hotel.new.hotetec.com](http://hotel.new.hotetec.com). Una vez realizada la configuración, se podrá utilizar la API PUSH Supplier-Phoenix para realizar
 el mantenimiento y gestión diaria. Funcionalidad soportada:
 
 - Modificación de cupos
