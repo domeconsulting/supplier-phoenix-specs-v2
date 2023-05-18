@@ -425,7 +425,7 @@
 A través de esta API PUSH el proveedor podrá gestionar las tarifas e inventario de la plataforma Hotetec a través de XML, así como descargar las reservas realizadas sobre dichas tarifas.</p>
 
 <p>La creación y configuración inicial del hotel, así como de sus tarifas e inventario, se realizará a través de la extranet web
-<a href="http://xml.hotetec.com">http://xml.hotetec.com</a>. Una vez realizada la configuración, se podrá utilizar la API PUSH Supplier-Phoenix para realizar
+<a href="http://hotel.new.hotetec.com">http://hotel.new.hotetec.com</a>. Una vez realizada la configuración, se podrá utilizar la API PUSH Supplier-Phoenix para realizar
 el mantenimiento y gestión diaria. Funcionalidad soportada:</p>
 
 <ul>
@@ -642,7 +642,7 @@ El proveedor puede elegir si utilizar XML o JSON <em>(disponible próximamente)<
 <li>URL JSON: <strong>https://xml.hotetec.com/unibox-api/supplier/jsonservice.srv</strong> <em>(disponible próximamente)</em></li>
 </ul>
 
-<aside class="notice">Por favor, solicitar credenciales de acceso a <b>soporte@hotetec.com</b></aside>
+<aside class="notice">Por favor, solicitar credenciales de acceso a <b>connectivity@hotetec.com</b></aside>
 <h1 id='hotelconfiguration'>HotelConfiguration</h1>
 <blockquote>
 <p>Ejemplo petición HotelConfigurationRequest para recuperar la configuración del hotel 1234
@@ -2405,19 +2405,33 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
         <span class="nt">&lt;reference&gt;</span>EPL10032017140800-SALE<span class="nt">&lt;/reference&gt;</span>
         <span class="nt">&lt;creationDate&gt;</span>10/03/2017 14:15<span class="nt">&lt;/creationDate&gt;</span>
         <span class="nt">&lt;modificationDate&gt;</span>10/03/2017 14:17<span class="nt">&lt;/modificationDate&gt;</span>
+        <span class="nt">&lt;country&gt;</span>ES<span class="nt">&lt;/country&gt;</span>
         <span class="nt">&lt;checkIn&gt;</span>15/04/2017<span class="nt">&lt;/checkIn&gt;</span>
         <span class="nt">&lt;checkOut&gt;</span>18/04/2017<span class="nt">&lt;/checkOut&gt;</span>
         <span class="nt">&lt;status&gt;</span>Confirmed<span class="nt">&lt;/status&gt;</span>
         <span class="nt">&lt;amount&gt;</span>550.00<span class="nt">&lt;/amount&gt;</span>
+        <span class="nt">&lt;amountToInvoice&gt;</span>625.25<span class="nt">&lt;/amountToInvoice&gt;</span>
         <span class="nt">&lt;bookingClient&gt;</span>
             <span class="nt">&lt;clientCode&gt;</span>EPL<span class="nt">&lt;/clientCode&gt;</span>
             <span class="nt">&lt;clientName&gt;</span>Europlayas<span class="nt">&lt;/clientName&gt;</span>
+            <span class="nt">&lt;fiscalClientName&gt;</span>Europlayas S.L.<span class="nt">&lt;/fiscalClientName&gt;</span>
+            <span class="nt">&lt;addressClient&gt;</span>Parc Bit, 14<span class="nt">&lt;/addressClient&gt;</span>
+            <span class="nt">&lt;postalClientCode&gt;</span>07001<span class="nt">&lt;/postalClientCode&gt;</span>
+            <span class="nt">&lt;countryClient&gt;</span>ES<span class="nt">&lt;/countryClient&gt;</span>
+            <span class="nt">&lt;cifClient&gt;</span>A00000000<span class="nt">&lt;/cifClient&gt;</span>
+            <span class="nt">&lt;emailClient&gt;</span>europlayas@test.com<span class="nt">&lt;/emailClient&gt;</span>
             <span class="nt">&lt;clientReference&gt;</span>AA45645D55<span class="nt">&lt;/clientReference&gt;</span>
         <span class="nt">&lt;/bookingClient&gt;</span>
         <span class="nt">&lt;endCustomer&gt;</span>
             <span class="nt">&lt;name&gt;</span>Elena Ballester<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;firstName&gt;</span>Elena<span class="nt">&lt;/firstName&gt;</span>
+            <span class="nt">&lt;lastName&gt;</span>Ballester<span class="nt">&lt;/lastName&gt;</span>
             <span class="nt">&lt;mail&gt;</span>elena_ballester1234@mail.com<span class="nt">&lt;/mail&gt;</span>
             <span class="nt">&lt;phone&gt;</span>003466667788<span class="nt">&lt;/phone&gt;</span>
+            <span class="nt">&lt;document&gt;</span>
+                <span class="nt">&lt;typeDocument&gt;</span>Passport<span class="nt">&lt;/typeDocument&gt;</span>
+                <span class="nt">&lt;numberDocument&gt;</span>A123456789<span class="nt">&lt;/numberDocument&gt;</span>
+            <span class="nt">&lt;/document&gt;</span>
         <span class="nt">&lt;/endCustomer&gt;</span>
         <span class="nt">&lt;commission&gt;</span>
             <span class="nt">&lt;serviceCommission&gt;</span>
@@ -2432,6 +2446,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
             <span class="nt">&lt;/serviceCommission&gt;</span>
         <span class="nt">&lt;/commission&gt;</span>
         <span class="nt">&lt;hotelCode&gt;</span>1234<span class="nt">&lt;/hotelCode&gt;</span>
+        <span class="nt">&lt;currencyCode&gt;</span>EUR<span class="nt">&lt;/currencyCode&gt;</span>
         <span class="nt">&lt;bookingRoom</span> <span class="na">id=</span><span class="s">"1"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;checkIn&gt;</span>15/04/2017<span class="nt">&lt;/checkIn&gt;</span>
             <span class="nt">&lt;checkOut&gt;</span>17/04/2017<span class="nt">&lt;/checkOut&gt;</span>
@@ -2440,112 +2455,148 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
             <span class="nt">&lt;internalRoomName&gt;</span>Nombre interno de la habitacion DBL#STD<span class="nt">&lt;/internalRoomName&gt;</span>
             <span class="nt">&lt;mealPlanCode&gt;</span>BB<span class="nt">&lt;/mealPlanCode&gt;</span>
             <span class="nt">&lt;amount&gt;</span>350.00<span class="nt">&lt;/amount&gt;</span>
+            <span class="nt">&lt;totalRoomAmount&gt;</span>350.00<span class="nt">&lt;/totalRoomAmount&gt;</span>
+            <span class="nt">&lt;commissionRoomAmount&gt;</span>0.0<span class="nt">&lt;/commissionRoomAmount&gt;</span>
+            <span class="nt">&lt;netRoomAmount&gt;</span>350.00<span class="nt">&lt;/netRoomAmount&gt;</span>
+            <span class="nt">&lt;amountRoomToInvoice&gt;</span>350.00<span class="nt">&lt;/amountRoomToInvoice&gt;</span>
             <span class="nt">&lt;roomRateDay&gt;</span>
                 <span class="nt">&lt;day&gt;</span>15/04/2017<span class="nt">&lt;/day&gt;</span>
                 <span class="nt">&lt;rateCode&gt;</span>BASE<span class="nt">&lt;/rateCode&gt;</span>
-                <span class="nt">&lt;rateName&gt;</span>BASE VERANO<span class="nt">&lt;rateName&gt;</span>
+                <span class="nt">&lt;rateName&gt;</span>BASE VERANO<span class="nt">&lt;/rateName&gt;</span>
                 <span class="nt">&lt;internalRateName&gt;</span>BASEVER<span class="nt">&lt;/internalRateName&gt;</span>
                 <span class="nt">&lt;amount&gt;</span>116.67<span class="nt">&lt;/amount&gt;</span>
             <span class="nt">&lt;/roomRateDay&gt;</span>
             <span class="nt">&lt;roomRateDay&gt;</span>
                 <span class="nt">&lt;day&gt;</span>16/04/2017<span class="nt">&lt;/day&gt;</span>
                 <span class="nt">&lt;rateCode&gt;</span>BASE<span class="nt">&lt;/rateCode&gt;</span>
-                <span class="nt">&lt;rateName&gt;</span>BASE VERANO<span class="nt">&lt;rateName&gt;</span>
-                <span class="nt">&lt;internalRateName&gt;</span>BASEVER<span class="nt">&lt;/internalRateName&gt;</span>        
+                <span class="nt">&lt;rateName&gt;</span>BASE VERANO<span class="nt">&lt;/rateName&gt;</span>
+                <span class="nt">&lt;internalRateName&gt;</span>BASEVER<span class="nt">&lt;/internalRateName&gt;</span>
                 <span class="nt">&lt;amount&gt;</span>116.67<span class="nt">&lt;/amount&gt;</span>
             <span class="nt">&lt;/roomRateDay&gt;</span>
             <span class="nt">&lt;roomRateDay&gt;</span>
                 <span class="nt">&lt;day&gt;</span>17/04/2017<span class="nt">&lt;/day&gt;</span>
                 <span class="nt">&lt;rateCode&gt;</span>BASE<span class="nt">&lt;/rateCode&gt;</span>
-                <span class="nt">&lt;rateName&gt;</span>BASE VERANO<span class="nt">&lt;rateName&gt;</span>
-                <span class="nt">&lt;internalRateName&gt;</span>BASEVER<span class="nt">&lt;/internalRateName&gt;</span>        
+                <span class="nt">&lt;rateName&gt;</span>BASE VERANO<span class="nt">&lt;/rateName&gt;</span>
+                <span class="nt">&lt;internalRateName&gt;</span>BASEVER<span class="nt">&lt;/internalRateName&gt;</span>
                 <span class="nt">&lt;amount&gt;</span>116.67<span class="nt">&lt;/amount&gt;</span>
             <span class="nt">&lt;/roomRateDay&gt;</span>
             <span class="nt">&lt;guest</span> <span class="na">id=</span><span class="s">"1"</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;type&gt;</span>Adult<span class="nt">&lt;/type&gt;</span>
                 <span class="nt">&lt;name&gt;</span>Juan Ballester<span class="nt">&lt;/name&gt;</span>
+                <span class="nt">&lt;firstName&gt;</span>Juan<span class="nt">&lt;/firstName&gt;</span>
+                <span class="nt">&lt;lastName&gt;</span>Ballester<span class="nt">&lt;/lastName&gt;</span>
+                <span class="nt">&lt;birthDate&gt;</span>19/06/1993<span class="nt">&lt;/birthDate&gt;</span>
                 <span class="nt">&lt;amount&gt;</span>175.00<span class="nt">&lt;/amount&gt;</span>
                 <span class="nt">&lt;age&gt;</span>33<span class="nt">&lt;/age&gt;</span>
             <span class="nt">&lt;/guest&gt;</span>
             <span class="nt">&lt;guest</span> <span class="na">id=</span><span class="s">"2"</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;type&gt;</span>Adult<span class="nt">&lt;/type&gt;</span>
                 <span class="nt">&lt;name&gt;</span>Elena Ballester<span class="nt">&lt;/name&gt;</span>
+                <span class="nt">&lt;firstName&gt;</span>Elena<span class="nt">&lt;/firstName&gt;</span>
+                <span class="nt">&lt;lastName&gt;</span>Ballester<span class="nt">&lt;/lastName&gt;</span>
+                <span class="nt">&lt;birthDate&gt;</span>23/08/1993<span class="nt">&lt;/birthDate&gt;</span>
                 <span class="nt">&lt;amount&gt;</span>175.00<span class="nt">&lt;/amount&gt;</span>
                 <span class="nt">&lt;age&gt;</span>33<span class="nt">&lt;/age&gt;</span>
             <span class="nt">&lt;/guest&gt;</span>
+            <span class="nt">&lt;cancellationData&gt;</span>
+                <span class="nt">&lt;cancelPenaltyPolicy</span> <span class="na">id=</span><span class="s">"5"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;date&gt;</span>18/05/2023 00:00<span class="nt">&lt;/date&gt;</span>
+                    <span class="nt">&lt;timeRelevant&gt;</span>false<span class="nt">&lt;/timeRelevant&gt;</span>
+                    <span class="nt">&lt;amount&gt;</span>625.25<span class="nt">&lt;/amount&gt;</span>
+                <span class="nt">&lt;/cancelPenaltyPolicy&gt;</span>
+            <span class="nt">&lt;/cancellationData&gt;</span>
         <span class="nt">&lt;/bookingRoom&gt;</span>
         <span class="nt">&lt;bookingRoom</span> <span class="na">id=</span><span class="s">"2"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;checkIn&gt;</span>15/04/2017<span class="nt">&lt;/checkIn&gt;</span>
             <span class="nt">&lt;checkOut&gt;</span>17/04/2017<span class="nt">&lt;/checkOut&gt;</span>
             <span class="nt">&lt;status&gt;</span>Confirmed<span class="nt">&lt;/status&gt;</span>
             <span class="nt">&lt;roomCode&gt;</span>SGL#STD<span class="nt">&lt;/roomCode&gt;</span>
-            <span class="nt">&lt;internalRoomName&gt;</span>Nombre interno de la habitacion SGL#STD<span class="nt">&lt;/internalRoomName&gt;</span>            
+            <span class="nt">&lt;totalRoomAmount&gt;</span>150.00<span class="nt">&lt;/totalRoomAmount&gt;</span>
+            <span class="nt">&lt;commissionRoomAmount&gt;</span>0.0<span class="nt">&lt;/commissionRoomAmount&gt;</span>
+            <span class="nt">&lt;netRoomAmount&gt;</span>150.00<span class="nt">&lt;/netRoomAmount&gt;</span>
+            <span class="nt">&lt;amountRoomToInvoice&gt;</span>150.00<span class="nt">&lt;/amountRoomToInvoice&gt;</span>
+            <span class="nt">&lt;internalRoomName&gt;</span>Nombre interno de la habitacion SGL#STD<span class="nt">&lt;/internalRoomName&gt;</span>
             <span class="nt">&lt;mealPlanCode&gt;</span>BB<span class="nt">&lt;/mealPlanCode&gt;</span>
             <span class="nt">&lt;amount&gt;</span>150.00<span class="nt">&lt;/amount&gt;</span>
             <span class="nt">&lt;roomRateDay&gt;</span>
                 <span class="nt">&lt;day&gt;</span>15/04/2017<span class="nt">&lt;/day&gt;</span>
                 <span class="nt">&lt;rateCode&gt;</span>BASE<span class="nt">&lt;/rateCode&gt;</span>
-                <span class="nt">&lt;rateName&gt;</span>BASE VERANO<span class="nt">&lt;rateName&gt;</span>
+                <span class="nt">&lt;rateName&gt;</span>BASE VERANO<span class="nt">&lt;/rateName&gt;</span>
                 <span class="nt">&lt;internalRateName&gt;</span>BASEVER<span class="nt">&lt;/internalRateName&gt;</span>
                 <span class="nt">&lt;amount&gt;</span>50.00<span class="nt">&lt;/amount&gt;</span>
             <span class="nt">&lt;/roomRateDay&gt;</span>
             <span class="nt">&lt;roomRateDay&gt;</span>
                 <span class="nt">&lt;day&gt;</span>16/04/2017<span class="nt">&lt;/day&gt;</span>
                 <span class="nt">&lt;rateCode&gt;</span>BASE<span class="nt">&lt;/rateCode&gt;</span>
-                <span class="nt">&lt;rateName&gt;</span>BASE VERANO<span class="nt">&lt;rateName&gt;</span>
-                <span class="nt">&lt;internalRateName&gt;</span>BASEVER<span class="nt">&lt;/internalRateName&gt;</span>        
+                <span class="nt">&lt;rateName&gt;</span>BASE VERANO<span class="nt">&lt;/rateName&gt;</span>
+                <span class="nt">&lt;internalRateName&gt;</span>BASEVER<span class="nt">&lt;/internalRateName&gt;</span>
                 <span class="nt">&lt;amount&gt;</span>50.00<span class="nt">&lt;/amount&gt;</span>
             <span class="nt">&lt;/roomRateDay&gt;</span>
             <span class="nt">&lt;roomRateDay&gt;</span>
                 <span class="nt">&lt;day&gt;</span>17/04/2017<span class="nt">&lt;/day&gt;</span>
                 <span class="nt">&lt;rateCode&gt;</span>BASE<span class="nt">&lt;/rateCode&gt;</span>
-                <span class="nt">&lt;rateName&gt;</span>BASE VERANO<span class="nt">&lt;rateName&gt;</span>
-                <span class="nt">&lt;internalRateName&gt;</span>BASEVER<span class="nt">&lt;/internalRateName&gt;</span>        
+                <span class="nt">&lt;rateName&gt;</span>BASE VERANO<span class="nt">&lt;/rateName&gt;</span>
+                <span class="nt">&lt;internalRateName&gt;</span>BASEVER<span class="nt">&lt;/internalRateName&gt;</span>
                 <span class="nt">&lt;amount&gt;</span>50.00<span class="nt">&lt;/amount&gt;</span>
             <span class="nt">&lt;/roomRateDay&gt;</span>
             <span class="nt">&lt;guest</span> <span class="na">id=</span><span class="s">"3"</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;type&gt;</span>Adult<span class="nt">&lt;/type&gt;</span>
                 <span class="nt">&lt;name&gt;</span>Elena Ballester<span class="nt">&lt;/name&gt;</span>
+                <span class="nt">&lt;firstName&gt;</span>Elena<span class="nt">&lt;/firstName&gt;</span>
+                <span class="nt">&lt;lastName&gt;</span>Ballester<span class="nt">&lt;/lastName&gt;</span>
+                <span class="nt">&lt;birthDate&gt;</span>23/08/1993<span class="nt">&lt;/birthDate&gt;</span>
                 <span class="nt">&lt;gender&gt;</span>Female<span class="nt">&lt;/gender&gt;</span>
                 <span class="nt">&lt;amount&gt;</span>100.00<span class="nt">&lt;/amount&gt;</span>
                 <span class="nt">&lt;age&gt;</span>33<span class="nt">&lt;/age&gt;</span>
             <span class="nt">&lt;/guest&gt;</span>
             <span class="nt">&lt;guest</span> <span class="na">id=</span><span class="s">"4"</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;type&gt;</span>Child<span class="nt">&lt;/type&gt;</span>
-                <span class="nt">&lt;name&gt;</span>Elena Ballester<span class="nt">&lt;/name&gt;</span>
+                <span class="nt">&lt;name&gt;</span>Maria Ballester<span class="nt">&lt;/name&gt;</span>
+                <span class="nt">&lt;firstName&gt;</span>Maria<span class="nt">&lt;/firstName&gt;</span>
+                <span class="nt">&lt;lastName&gt;</span>Maria<span class="nt">&lt;/lastName&gt;</span>
+                <span class="nt">&lt;birthDate&gt;</span>25/03/2015<span class="nt">&lt;/birthDate&gt;</span>
                 <span class="nt">&lt;gender&gt;</span>Female<span class="nt">&lt;/gender&gt;</span>
                 <span class="nt">&lt;amount&gt;</span>50.00<span class="nt">&lt;/amount&gt;</span>
                 <span class="nt">&lt;age&gt;</span>33<span class="nt">&lt;/age&gt;</span>
             <span class="nt">&lt;/guest&gt;</span>
         <span class="nt">&lt;/bookingRoom&gt;</span>
         <span class="nt">&lt;bookingSupplement&gt;</span>
-            <span class="nt">&lt;code&gt;</span>PKG<span class="nt">&lt;/code&gt;</span>
-            <span class="nt">&lt;code&gt;</span>Parking<span class="nt">&lt;/code&gt;</span>
+            <span class="nt">&lt;code&gt;</span>[EtT]Supplement(PpT)DEMOHTT@30621@20054@1@EUR<span class="nt">&lt;/code&gt;</span>
+            <span class="nt">&lt;name&gt;</span>PARK - 1<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;typeSupplement&gt;</span>SalePolicy<span class="nt">&lt;/typeSupplement&gt;</span>
+            <span class="nt">&lt;internalTypeSupplement&gt;</span>SPS<span class="nt">&lt;/internalTypeSupplement&gt;</span>
             <span class="nt">&lt;description&gt;</span>Suplemento Parking toda la estancia<span class="nt">&lt;/description&gt;</span>
             <span class="nt">&lt;checkIn&gt;</span>15/04/2017<span class="nt">&lt;/checkIn&gt;</span>
             <span class="nt">&lt;checkOut&gt;</span>17/04/2017<span class="nt">&lt;/checkOut&gt;</span>
             <span class="nt">&lt;bookingRoomId&gt;</span>1<span class="nt">&lt;/bookingRoomId&gt;</span>
             <span class="nt">&lt;amount&gt;</span>50.00<span class="nt">&lt;/amount&gt;</span>
+            <span class="nt">&lt;mandatory&gt;</span>true<span class="nt">&lt;/mandatory&gt;</span>
         <span class="nt">&lt;/bookingSupplement&gt;</span>
         <span class="nt">&lt;remark&gt;</span>
-            <span class="nt">&lt;code&gt;</span>GENERAL<span class="nt">&lt;/code&gt;</span>
+            <span class="nt">&lt;code&gt;</span>Informative<span class="nt">&lt;/code&gt;</span>
             <span class="nt">&lt;from&gt;</span>Hotel<span class="nt">&lt;/from&gt;</span>
             <span class="nt">&lt;to&gt;</span>Client<span class="nt">&lt;/to&gt;</span>
             <span class="nt">&lt;text&gt;</span>Piscina cerrada hasta el 15/04/2017<span class="nt">&lt;/text&gt;</span>
         <span class="nt">&lt;/remark&gt;</span>
         <span class="nt">&lt;remark&gt;</span>
-            <span class="nt">&lt;code&gt;</span>GENERAL<span class="nt">&lt;/code&gt;</span>
-            <span class="nt">&lt;from&gt;</span>Client<span class="nt">&lt;/from&gt;</span>                 
+            <span class="nt">&lt;code&gt;</span>Informative<span class="nt">&lt;/code&gt;</span>
+            <span class="nt">&lt;from&gt;</span>Client<span class="nt">&lt;/from&gt;</span>
             <span class="nt">&lt;to&gt;</span>Hotel<span class="nt">&lt;/to&gt;</span>
-            <span class="nt">&lt;bookingRoomId&gt;</span>2<span class="nt">&lt;/bookingRoomId&gt;</span>    
+            <span class="nt">&lt;bookingRoomId&gt;</span>2<span class="nt">&lt;/bookingRoomId&gt;</span>
             <span class="nt">&lt;text&gt;</span>Por favor, habitaciones no fumadores<span class="nt">&lt;/text&gt;</span>
+        <span class="nt">&lt;/remark&gt;</span>
+        <span class="nt">&lt;remark&gt;</span>
+            <span class="nt">&lt;code&gt;</span>ArrivalTime<span class="nt">&lt;/code&gt;</span>
+            <span class="nt">&lt;from&gt;</span>Client<span class="nt">&lt;/from&gt;</span>
+            <span class="nt">&lt;to&gt;</span>Hotel<span class="nt">&lt;/to&gt;</span>
+            <span class="nt">&lt;text&gt;</span>12:00<span class="nt">&lt;/text&gt;</span>
         <span class="nt">&lt;/remark&gt;</span>
         <span class="nt">&lt;bookingPayment&gt;</span>
             <span class="nt">&lt;modality&gt;</span>Establishment<span class="nt">&lt;/modality&gt;</span>
             <span class="nt">&lt;internalModalityName&gt;</span>Descripcion interna modalidad de pago<span class="nt">&lt;/internalModalityName&gt;</span>
             <span class="nt">&lt;type&gt;</span>PrepaidCard<span class="nt">&lt;/type&gt;</span>
-        <span class="nt">&lt;otaType&gt;</span>PC<span class="nt">&lt;/otaType&gt;</span>
-        <span class="nt">&lt;description&gt;</span>Tarjeta de prepago<span class="nt">&lt;/description&gt;</span>
+            <span class="nt">&lt;otaType&gt;</span>PC<span class="nt">&lt;/otaType&gt;</span>
+            <span class="nt">&lt;description&gt;</span>Tarjeta de prepago<span class="nt">&lt;/description&gt;</span>
             <span class="nt">&lt;status&gt;</span>Pending<span class="nt">&lt;/status&gt;</span>
         <span class="nt">&lt;/bookingPayment&gt;</span>
         <span class="nt">&lt;paymentCardDetail&gt;</span>
@@ -2561,9 +2612,9 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
             <span class="nt">&lt;date&gt;</span>24/01/2019 17:18<span class="nt">&lt;/date&gt;</span>
             <span class="nt">&lt;amount&gt;</span>2635.663<span class="nt">&lt;/amount&gt;</span>
             <span class="nt">&lt;externalManagedDetail&gt;</span>
-            <span class="nt">&lt;externalSystemCode&gt;</span>TARJETA VIRTUAL<span class="nt">&lt;/externalSystemCode&gt;</span>
-            <span class="nt">&lt;externalReference&gt;</span>5227<span class="nt">&lt;/externalReference&gt;</span>
-            <span class="nt">&lt;status&gt;</span>Ok<span class="nt">&lt;/status&gt;</span>
+                <span class="nt">&lt;externalSystemCode&gt;</span>TARJETA VIRTUAL<span class="nt">&lt;/externalSystemCode&gt;</span>
+                <span class="nt">&lt;externalReference&gt;</span>5227<span class="nt">&lt;/externalReference&gt;</span>
+                <span class="nt">&lt;status&gt;</span>Ok<span class="nt">&lt;/status&gt;</span>
             <span class="nt">&lt;/externalManagedDetail&gt;</span>
             <span class="nt">&lt;breakdown&gt;</span>
                 <span class="nt">&lt;bookingRoomId&gt;</span>1<span class="nt">&lt;/bookingRoomId&gt;</span>
@@ -2598,7 +2649,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
             <span class="nt">&lt;breakdown&gt;</span>
                 <span class="nt">&lt;bookingRoomId&gt;</span>2<span class="nt">&lt;/bookingRoomId&gt;</span>
                 <span class="nt">&lt;amount&gt;</span>150.0<span class="nt">&lt;/amount&gt;</span>
-            <span class="nt">&lt;/breakdown&gt;</span>            
+            <span class="nt">&lt;/breakdown&gt;</span>
         <span class="nt">&lt;/paymentDetail&gt;</span>
     <span class="nt">&lt;/booking&gt;</span>
 <span class="nt">&lt;/BookingRetrievalResponse&gt;</span>
@@ -2609,21 +2660,47 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
       </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPL10032017140800-SALE"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10/03/2017 14:15"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"modificationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10/03/2017 14:17"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ES"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"checkIn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15/04/2017"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"checkOut"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18/04/2017"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Confirmed"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"550.00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amountToInvoice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"550.00"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"bookingClient"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"clientCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPL"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"clientName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europlayas"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fiscalClientName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europlayas S.L."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"addressClient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parc Bit, 14"</span><span class="p">,</span><span class="w"> 
+        </span><span class="nl">"postalClientCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"07001"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"countryClient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ES"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cifClient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A0000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"emailClient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"europlayas@test.com"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"clientReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AA45645D55"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"endCustomer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elena Ballester"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elena"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ballester"</span><span class="p">,</span><span class="w">        
         </span><span class="nl">"mail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"elena_ballester1234@mail.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"003466667788"</span><span class="w">
+        </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"003466667788"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"typeDocument"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Passport"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"numberDocument"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A123456789"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"commission"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"serviceCommission"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nl">"serviceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"commissionAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"commissionPercentage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+          </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"serviceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"commissionAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"commissionPercentage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">           
+          </span><span class="p">}]</span><span class="w">          
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"hotelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"currencyCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"bookingRoom"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
@@ -2634,6 +2711,10 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
           </span><span class="nl">"internalRoomName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Nombre interno de la habitacion DBL#STD"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"mealPlanCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BB"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"350.00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"totalRoomAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"350.00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"commissionRoomAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"netRoomAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"350.00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"amountRoomToInvoice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"350.00"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"roomRateDay"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
               </span><span class="nl">"day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15/04/2017"</span><span class="p">,</span><span class="w">
@@ -2661,6 +2742,9 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
             </span><span class="p">{</span><span class="w">
               </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Juan Ballester"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Juan"</span><span class="p">,</span><span class="w"> 
+              </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ballester"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"birthDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19/06/1993"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adult"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"175.00"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33"</span><span class="w">
@@ -2668,11 +2752,21 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
             </span><span class="p">{</span><span class="w">
               </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elena Ballester"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elena"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ballester"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"birthDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23/08/1993"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adult"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"175.00"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33"</span><span class="w">
             </span><span class="p">}</span><span class="w">
-          </span><span class="p">]</span><span class="w">
+          </span><span class="p">],</span><span class="w"> 
+          </span><span class="nl">"cancellationData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"cancelPenaltyPolicy"</span><span class="p">:[{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"timeRelevant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w"> 
+                </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"350.00"</span><span class="w">
+              </span><span class="p">}]</span><span class="w">                  
+          </span><span class="p">}</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
@@ -2681,6 +2775,10 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
           </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Confirmed"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"roomCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SGL#STD"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"mealPlanCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BB"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"totalRoomAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"150.00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"commissionRoomAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"netRoomAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"150.00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"amountRoomToInvoice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"150.00"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"150.00"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"roomRateDay"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
@@ -2709,6 +2807,9 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
             </span><span class="p">{</span><span class="w">
               </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elena Ballester"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elena"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ballester"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"birthDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23/08/1993"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adult"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Female"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.00"</span><span class="p">,</span><span class="w">
@@ -2716,7 +2817,10 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
               </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elena Ballester"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maria Ballester"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maria"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ballester"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"birthDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25/03/2015"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Female"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Child"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50.00"</span><span class="p">,</span><span class="w">
@@ -2726,37 +2830,44 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"bookingSupplement"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="s2">"PKG"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"Parking"</span><span class="w">
-        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[EtT]Supplement(PpT)DEMOHTT@30621@20054@1@EUR"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"PARK - 1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"typeSupplement"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SalePolicy"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"internalTypeSupplement"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPS"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Suplemento Parking toda la estancia"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"checkIn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15/04/2017"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"checkOut"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17/04/2017"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"bookingRoomId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50.00"</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50.00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mandatory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"remark"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GENERAL"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Informative"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hotel"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Piscina cerrada hasta el 15/04/2017"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GENERAL"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Informative"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hotel"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"bookingRoomId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Por favor, habitaciones no fumadores"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ArrivalTime"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hotel"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12:00"</span><span class="w">           
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">            
       </span><span class="nl">"bookingPayment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"modality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Establishment"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"internalModalityName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Descripcion interna modalidad de pago"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WarrantyCard"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"otaType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PC"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tarjeta de garantía"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"otaType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tarjeta de garantía"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pending"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"paymentCardDetail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -2764,7 +2875,49 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
         </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4111111111111111"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"expiryDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01/01/2020"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"securityCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w"> 
+      </span><span class="nl">"paymentDetail"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+          </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Charge"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"paymentStatus"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExternalManaged"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24/01/2019 17:18"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2635.663"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"externalManagedDetail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"externalSystemCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TARJETA VIRTUAL"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"externalReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5227"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="w">
+          </span><span class="p">},</span><span class="w"> 
+          </span><span class="nl">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+              </span><span class="nl">"bookingRoomId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"350.0"</span><span class="w">
+          </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"bookingRoomId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"150.0"</span><span class="w">
+          </span><span class="p">}]</span><span class="w">
+      </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Charge"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"paymentStatus"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExternalManaged"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24/01/2019 17:18"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2635.663"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"prepaidCardDetail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pending"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"card"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"cardTypeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VISA"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"holder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elena Ballester"</span><span class="p">,</span><span class="w"> 
+                  </span><span class="nl">"number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"4111111111111111"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"expiryDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01/01/2020"</span><span class="w">
+                  </span><span class="nl">"securityCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+              </span><span class="nl">"bookingRoomId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"350.0"</span><span class="w">
+          </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"bookingRoomId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"150.0"</span><span class="w">
+          </span><span class="p">}]</span><span class="w">
+      </span><span class="p">}]</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
