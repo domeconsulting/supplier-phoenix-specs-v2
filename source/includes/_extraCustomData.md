@@ -64,7 +64,7 @@ IpAdress | *String* | Indica la ip desde la cual se ha realizado la reserva.
 Country | *String* | Indica el pais desde el cual se ha realizado la reserva. (ISO 3166)
 ReferredByUrl | *String* | Indica la Url desde la cual ha llegado la reserva.
 ReferredBySystem | *String* | Indica el sistema desde el cual ha llegado la reserva. (GHF -Google Hotel Finder-, TVG -Trivago-).
-ParentSystem | *String* | Indica el sistema padre desde el cual ha llegado la reserva. (XML -Xml-, STK -Canal externo-, WEB -Web y Web móvil- y CCH -Call Center-).
+ParentSystem | *String* | Indica el sistema padre desde el cual ha llegado la reserva. (XML -Xml-, STK -Canal externo-, WEB -Web, Web móvil y B2B- y CCH -Call Center-).
 Affiliate | *String* | 
 Medium | *String* |
 Source | *String* |
@@ -78,6 +78,7 @@ AgencyReference | *String* | Indica el localizador de reserva de la agencia envi
 Flight_Arrival | *String* | Indica la información recibida en la reserva sobre el vuelo de llegada. Tiene un formato específico y es: IdHabitación@NumeroVuelo#DiayHoraLlegada (dd/MM/yyyy HH:mm)
 Flight_Departure| *String* | Indica la información recibida en la reserva sobre el vuelo de salida. Tiene un formato específico y es: IdHabitación@NumeroVuelo#DiayHoraLlegada (dd/MM/yyyy HH:mm)
 CostDate| *String* | Indica la fecha en que se realizó la valoración de los costes de la reserva (dd/MM/yyyy)
+CreationSystem| *String* | Indica el sistema de creacion de la reserva
 
 <aside class="notice">
 <sup>1</sup>&nbsp;&nbsp;&nbsp;Los tipos de cliente actuales son: M (Mayorista) / A (Alojamiento) / C (Channel Manager) / O (Operador) / G (Agencia de viajes)
