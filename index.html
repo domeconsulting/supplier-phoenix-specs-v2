@@ -606,6 +606,12 @@ gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento 
 <td>1.1.23</td>
 <td>Se añade el elemento breakdown a nivel de PaymentDetail</td>
 </tr>
+<tr>
+<td>27/06/2023</td>
+<td>Rafel Mestre</td>
+<td>1.1.24</td>
+<td>Se añade el elemento loyalty que identifica las reservas de tipo GENIUS de Booking.com</td>
+</tr>
 </tbody></table>
 <h1 id='protocolo-de-conexion'>Protocolo de conexión</h1>
 <ul>
@@ -4541,6 +4547,11 @@ o bien las reservas de un hotel creadas, canceladas o modificadas dentro de un r
 <td>CreationSystem</td>
 <td><em>String</em></td>
 <td>Indica el sistema de creacion de la reserva</td>
+</tr>
+<tr>
+<td>Loyalty</td>
+<td><em>String</em></td>
+<td>Si viene informado, indica que la reserva es de tipo GENIUS (para las reservas de Booking.com)</td>
 </tr>
 </tbody></table>
 
