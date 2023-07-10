@@ -31,3 +31,4 @@ Fecha | Autor | Versión | Cambios realizados
 19/12/2022 | Rafel Mestre | 1.1.22 | Se cambia el tipo del id de habitación de Integer a String
 09/05/2023 | Isaac Fullana | 1.1.23 | Se añade el elemento breakdown a nivel de PaymentDetail
 27/06/2023 | Rafel Mestre | 1.1.24 | Se añade el elemento loyalty que identifica las reservas de tipo GENIUS de Booking.com
+11/07/2023 | Rafel Mestre | 1.1.25 | Se permite la recuperación de reservas por localizador externo (clientReference).

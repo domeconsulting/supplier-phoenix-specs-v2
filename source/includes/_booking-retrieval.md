@@ -32,6 +32,38 @@
 }
 ````
 
+> Ejemplo BookingRetrievalRequest para recuperar una reserva a partir del localizador externo
+&nbsp;&nbsp;<span class="postman-button">[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/495ff7995b655b745365)</span>
+
+````xml
+<?xml version="1.0" encoding="UTF-8"?>
+<BookingRetrievalRequest>
+    <credentials>
+        <systemCode>SFO</systemCode>
+        <vendorCode>FOO</vendorCode>
+        <user>BAR</user>
+        <password>FOOBAR</password>
+    </credentials>   
+    <hotelCode>1234</hotelCode>
+    <clientReference>23564378</clientReference>
+</BookingRetrievalRequest>
+````
+
+````json
+{
+  "BookingRetrievalRequest": {
+    "credentials": {
+      "systemCode": "SFO",
+      "vendorCode": "FOO",
+      "user": "BAR",
+      "password": "FOOBAR"
+    },
+    "hotelCode": "1234",
+    "clientReference": "23564378"
+  }
+}
+````
+
 > Ejemplo BookingRetrievalRequest para para recuperar las reservas de un hotel en un determinado rango de fechas (creadas, canceladas o modificadas)
 &nbsp;&nbsp;<span class="postman-button">[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/495ff7995b655b745365)</span>
 
@@ -609,6 +641,7 @@ Elemento | Tipo | Obl? |  Descripción
 --------- | ----------- | ----------- | -----------
 credentials | **Credentials** | Sí |Credenciales de autenticación del usuario (Ver Autenticación)
 reference | *String* | No<sup>1</sup> | Localizador de la reserva
+clientReference | *String* | No<sup>1</sup> | Localizador externo de la reserva
 hotelCode | *Integer* | Sí | Código de hotel
 dateFrom | *DateTime* | No<sup>1</sup> | Fecha desde. Devolverá todas las reservas que se hayan creado, cancelado o modificado a partir de esta fecha (dd/MM/yyy HH:mm)
 dateTo | *DateTime* | No<sup>1</sup> | Fecha hasta. Devolverá todas las reservas que se hayan creado, cancelado o modificado hasta esta fecha (dd/MM/yyy HH:mm)
