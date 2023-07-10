@@ -612,6 +612,12 @@ gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento 
 <td>1.1.24</td>
 <td>Se añade el elemento loyalty que identifica las reservas de tipo GENIUS de Booking.com</td>
 </tr>
+<tr>
+<td>11/07/2023</td>
+<td>Rafel Mestre</td>
+<td>1.1.25</td>
+<td>Se permite la recuperación de reservas por localizador externo (clientReference).</td>
+</tr>
 </tbody></table>
 <h1 id='protocolo-de-conexion'>Protocolo de conexión</h1>
 <ul>
@@ -2369,6 +2375,34 @@ Se puede actualizar:
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
+<p>Ejemplo BookingRetrievalRequest para recuperar una reserva a partir del localizador externo
+&nbsp;&nbsp;<span class="postman-button"><a href="https://app.getpostman.com/run-collection/495ff7995b655b745365"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman" /></a></span></p>
+</blockquote>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;BookingRetrievalRequest&gt;</span>
+    <span class="nt">&lt;credentials&gt;</span>
+        <span class="nt">&lt;systemCode&gt;</span>SFO<span class="nt">&lt;/systemCode&gt;</span>
+        <span class="nt">&lt;vendorCode&gt;</span>FOO<span class="nt">&lt;/vendorCode&gt;</span>
+        <span class="nt">&lt;user&gt;</span>BAR<span class="nt">&lt;/user&gt;</span>
+        <span class="nt">&lt;password&gt;</span>FOOBAR<span class="nt">&lt;/password&gt;</span>
+    <span class="nt">&lt;/credentials&gt;</span>   
+    <span class="nt">&lt;hotelCode&gt;</span>1234<span class="nt">&lt;/hotelCode&gt;</span>
+    <span class="nt">&lt;clientReference&gt;</span>23564378<span class="nt">&lt;/clientReference&gt;</span>
+<span class="nt">&lt;/BookingRetrievalRequest&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"BookingRetrievalRequest"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"credentials"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"systemCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SFO"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"vendorCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FOO"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BAR"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FOOBAR"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"hotelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"clientReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23564378"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
 <p>Ejemplo BookingRetrievalRequest para para recuperar las reservas de un hotel en un determinado rango de fechas (creadas, canceladas o modificadas)
 &nbsp;&nbsp;<span class="postman-button"><a href="https://app.getpostman.com/run-collection/495ff7995b655b745365"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman" /></a></span></p>
 </blockquote>
@@ -2950,6 +2984,12 @@ o bien las reservas de un hotel creadas, canceladas o modificadas dentro de un r
 <td><em>String</em></td>
 <td>No<sup>1</sup></td>
 <td>Localizador de la reserva</td>
+</tr>
+<tr>
+<td>clientReference</td>
+<td><em>String</em></td>
+<td>No<sup>1</sup></td>
+<td>Localizador externo de la reserva</td>
 </tr>
 <tr>
 <td>hotelCode</td>
