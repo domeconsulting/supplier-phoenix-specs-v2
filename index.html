@@ -618,6 +618,12 @@ gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento 
 <td>1.1.25</td>
 <td>Se permite la recuperación de reservas por localizador externo (clientReference).</td>
 </tr>
+<tr>
+<td>21/07/2023</td>
+<td>Rafel Mestre</td>
+<td>1.1.26</td>
+<td>Se cambia el tipo del campo BookingRoomId de Integer a String</td>
+</tr>
 </tbody></table>
 <h1 id='protocolo-de-conexion'>Protocolo de conexión</h1>
 <ul>
@@ -3577,7 +3583,7 @@ o bien las reservas de un hotel creadas, canceladas o modificadas dentro de un r
 </tr>
 <tr>
 <td>↳↳ bookingRoomId</td>
-<td><em>Integer</em></td>
+<td><em>String</em></td>
 <td>No</td>
 <td>Identificador de la habitación reservada, si el suplemento referencia a una habitación en concreto</td>
 </tr>
