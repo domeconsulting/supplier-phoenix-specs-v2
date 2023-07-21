@@ -751,7 +751,7 @@ booking[] | **Booking** | No | Información de una reserva de hotel
 ↳↳ description| *String* | No | Descripción detallada del suplemento opcional reservado
 ↳↳ checkIn| *Date* | No | Fecha de inicio del suplemento (dd/MM/yyy)
 ↳↳ checkOut| *Date* | No | Fecha de fin del suplemento (dd/MM/yyy)
-↳↳ bookingRoomId| *Integer* | No | Identificador de la habitación reservada, si el suplemento referencia a una habitación en concreto
+↳↳ bookingRoomId| *String* | No | Identificador de la habitación reservada, si el suplemento referencia a una habitación en concreto
 ↳↳ guestId[]| *Integer* | No | Identificador del pasajero al que se hace referencia, si el suplemento referencia a un pasajero/os en concreto
 ↳↳ amount| *Double* | Sí | Importe total del suplemento opcional reservado
 ↳↳ commissionSupplementAmount| *Double* | No | Comisión del suplemento (#.##)
