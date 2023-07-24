@@ -688,6 +688,7 @@ booking[] | **Booking** | No | Información de una reserva de hotel
 ↳↳ mail| *String* | No | Email del cliente final
 ↳↳ phone| *String* | No | Teléfono de contacto del cliente final
 ↳↳ nationality| *String* | No | Nacionadlidad (2 letter ISO 3166)
+↳↳ address| *String* | No | Dirección indicada para el cliente
 ↳↳ document| **Document** | No | Información referente al documento de identificación de la persona de contacto
 ↳↳↳ typeDocument| *String* | No | Tipo de documento (DNI, NIE, Passport o IdentityCard)
 ↳↳↳ numberDocument| *String* | No | Número de documento
