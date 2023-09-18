@@ -384,30 +384,30 @@ Se puede actualizar:
 
 Mensaje petición de actualización de inventario y tarifas de hotel.
  
-Elemento | Tipo | Obl? |  Descripción
---------- | ----------- | ----------- | -----------
-credentials | **Credentials** | Sí |Credenciales de autenticación del usuario (Ver Autenticación)
-hotelCode | *Integer* | Sí |Código de hotel
-roomRate[] | **RoomRate** | Sí | Información asociada a una combinación de tarifa y modalidad de hotel
-↳ @rateCode| *String* | Sí | Código de tarifa
-↳ @roomCode| *String* | Sí | Código de modalidad
-↳ roomRateDate| **RomRateDate** | Sí | Información relativa a un rango de fechas
-↳↳ @dateFrom| *Date* | Sí | Fecha desde (dd/MM/yyyy, rangos cerrados)
-↳↳ @dateTo| *Date* | Sí | Fecha hasta (dd/MM/yyyy, rangos cerrados)
+Elemento | Tipo | Obl?           |  Descripción
+--------- | ----------- |----------------| -----------
+credentials | **Credentials** | Sí             |Credenciales de autenticación del usuario (Ver Autenticación)
+hotelCode | *Integer* | Sí             |Código de hotel
+roomRate[] | **RoomRate** | Sí             | Información asociada a una combinación de tarifa y modalidad de hotel
+↳ @rateCode| *String* | Sí             | Código de tarifa
+↳ @roomCode| *String* | Sí             | Código de modalidad
+↳ roomRateDate| **RomRateDate** | Sí             | Información relativa a un rango de fechas
+↳↳ @dateFrom| *Date* | Sí             | Fecha desde (dd/MM/yyyy, rangos cerrados)
+↳↳ @dateTo| *Date* | Sí             | Fecha hasta (dd/MM/yyyy, rangos cerrados)
 ↳↳ availableQuota| *Integer* | No<sup>1</sup> | Unidades de cupo disponible
 ↳↳ status| *Enum* | No<sup>1</sup> | Estado del inventario
 ↳↳ mealPlan[]| **MealPlan** | No<sup>2</sup> | Información asociada al régimen alimenticio
-↳↳↳ @code| *String* | Sí | Código de régimen alimenticio
-↳↳↳ minimumStay| *Integer* | Sí | Días de estancia mínima (0: No hay estancia mínima)
-↳↳↳ maximumStay| *Integer* | Sí | Días de estancia máxima (0: No hay límite de estancia)
-↳↳↳ release| *Integer* | Sí | Días de release (0: No hay release)
-↳↳↳ closedOnCheckIn| *Boolean* | Sí | Indica si no está permitida la entrada
-↳↳↳ closedOnCheckOut| *Boolean* | Sí | Indica si no está permitida la salida
-↳↳↳ price[]| **Price** | Sí | Precio para una ocupación
-↳↳↳↳ adults| *Integer* | Sí | Número de adultos
-↳↳↳↳ children| *Integer* | Sí | Número de niños
-↳↳↳↳ amount| *Double* | Sí | Precio para el total de la ocupación (#.##)
-↳↳↳↳ status| *Enum* | Sí | Estado de la ocupación
+↳↳↳ @code| *String* | Sí             | Código de régimen alimenticio
+↳↳↳ minimumStay| *Integer* | No             | Días de estancia mínima (0: No hay estancia mínima)
+↳↳↳ maximumStay| *Integer* | No             | Días de estancia máxima (0: No hay límite de estancia)
+↳↳↳ release| *Integer* | No             | Días de release (0: No hay release)
+↳↳↳ closedOnCheckIn| *Boolean* | No             | Indica si no está permitida la entrada
+↳↳↳ closedOnCheckOut| *Boolean* | No             | Indica si no está permitida la salida
+↳↳↳ price[]| **Price** | Sí             | Precio para una ocupación
+↳↳↳↳ adults| *Integer* | Sí             | Número de adultos
+↳↳↳↳ children| *Integer* | Sí             | Número de niños
+↳↳↳↳ amount| *Double* | Sí             | Precio para el total de la ocupación (#.##)
+↳↳↳↳ status| *Enum* | Sí             | Estado de la ocupación
 
 ### RoomRatesUpdateResponse
 
