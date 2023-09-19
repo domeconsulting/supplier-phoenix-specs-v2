@@ -282,7 +282,7 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-6bc08254.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-b12a2749.js"></script>
 
@@ -629,6 +629,12 @@ gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento 
 <td>Rafel Mestre</td>
 <td>1.1.27</td>
 <td>Se añade el campo &#39;address&#39; en los datos del cliente final de reserva (endCustomer).</td>
+</tr>
+<tr>
+<td>19/09/2023</td>
+<td>Alain Ramirez</td>
+<td>1.1.28</td>
+<td>Se cambia la obligatoriedad de los campos minimumStay, maximumStay, release, closedOnCheckIn y closedOnCheckOut en la petición RoomRatesUpdateRequest. Ahora no son requeridos.</td>
 </tr>
 </tbody></table>
 <h1 id='protocolo-de-conexion'>Protocolo de conexión</h1>
@@ -1525,31 +1531,31 @@ Se puede actualizar:
 <tr>
 <td>↳↳↳ minimumStay</td>
 <td><em>Integer</em></td>
-<td>Sí</td>
+<td>No</td>
 <td>Días de estancia mínima (0: No hay estancia mínima)</td>
 </tr>
 <tr>
 <td>↳↳↳ maximumStay</td>
 <td><em>Integer</em></td>
-<td>Sí</td>
+<td>No</td>
 <td>Días de estancia máxima (0: No hay límite de estancia)</td>
 </tr>
 <tr>
 <td>↳↳↳ release</td>
 <td><em>Integer</em></td>
-<td>Sí</td>
+<td>No</td>
 <td>Días de release (0: No hay release)</td>
 </tr>
 <tr>
 <td>↳↳↳ closedOnCheckIn</td>
 <td><em>Boolean</em></td>
-<td>Sí</td>
+<td>No</td>
 <td>Indica si no está permitida la entrada</td>
 </tr>
 <tr>
 <td>↳↳↳ closedOnCheckOut</td>
 <td><em>Boolean</em></td>
-<td>Sí</td>
+<td>No</td>
 <td>Indica si no está permitida la salida</td>
 </tr>
 <tr>
