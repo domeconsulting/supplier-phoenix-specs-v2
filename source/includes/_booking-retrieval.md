@@ -694,7 +694,7 @@ booking[] | **Booking** | No | Información de una reserva de hotel
 ↳↳↳ numberDocument| *String* | No | Número de documento
 ↳ commision| **Commission** | No | Información sobre las comisiones aplicadas en la reserva
 ↳↳ serviceCommission[]| *ServiceCommission* | No | Información específica sobre un servicio reservado
-↳↳↳ serviceId| *Integer* | Sí | Identificador que identifica la habitación reservada
+↳↳↳ serviceId| *String* | Sí | Identificador que identifica la habitación reservada
 ↳↳↳ commissionAmount| *Double* | No| Importe de la comisión aplicada
 ↳↳↳ commissionPercentage| *Double* | No | Porcentage de la comisión aplicada
 ↳ hotelCode| *Integer* | Sí | Código de hotel
