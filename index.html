@@ -636,6 +636,12 @@ gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento 
 <td>1.1.28</td>
 <td>Se cambia la obligatoriedad de los campos minimumStay, maximumStay, release, closedOnCheckIn y closedOnCheckOut en la petición RoomRatesUpdateRequest. Ahora no son requeridos.</td>
 </tr>
+<tr>
+<td>24/01/2024</td>
+<td>Rafel Mestre</td>
+<td>1.1.29</td>
+<td>Se cambia el tipo del campo serviceId del nodo commission, de Integer a String.</td>
+</tr>
 </tbody></table>
 <h1 id='protocolo-de-conexion'>Protocolo de conexión</h1>
 <ul>
@@ -3253,7 +3259,7 @@ o bien las reservas de un hotel creadas, canceladas o modificadas dentro de un r
 </tr>
 <tr>
 <td>↳↳↳ serviceId</td>
-<td><em>Integer</em></td>
+<td><em>String</em></td>
 <td>Sí</td>
 <td>Identificador que identifica la habitación reservada</td>
 </tr>
