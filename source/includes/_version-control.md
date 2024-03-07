@@ -36,3 +36,4 @@ Fecha | Autor | Versión | Cambios realizados
 24/07/2023 | Rafel Mestre | 1.1.27  | Se añade el campo 'address' en los datos del cliente final de reserva (endCustomer).
 19/09/2023 | Alain Ramirez | 1.1.28  | Se cambia la obligatoriedad de los campos minimumStay, maximumStay, release, closedOnCheckIn y closedOnCheckOut en la petición RoomRatesUpdateRequest. Ahora no son requeridos.
 24/01/2024 | Rafel Mestre | 1.1.29 | Se cambia el tipo del campo serviceId del nodo commission, de Integer a String.
+07/03/2024 | Rafel Mestre | 1.1.30 | Se añade el elemento extraCustomData a nivel de habitación (BookingRoom).

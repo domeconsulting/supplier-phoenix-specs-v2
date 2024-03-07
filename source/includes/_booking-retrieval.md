@@ -209,6 +209,28 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 					<amount>625.25</amount>
 				</cancelPenaltyPolicy>
 			</cancellationData>
+			<extraCustomData>
+				<customData>
+					<key>CreationSystem</key>
+					<value>HPH</value>
+				</customData>
+				<customData>
+					<key>ParentSystem</key>
+					<value>WEB</value>
+				</customData>
+				<customData>
+					<key>Country</key>
+					<value>ES</value>
+				</customData>
+				<customData>
+					<key>PriceType</key>
+					<value>PVP</value>
+				</customData>
+				<customData>
+					<key>ClientType</key>
+					<value>A</value>
+				</customData>
+			</extraCustomData>
 		</bookingRoom>
 		<bookingRoom id="2">
 			<checkIn>15/04/2017</checkIn>
@@ -355,6 +377,28 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 				<amount>150.0</amount>
 			</breakdown>
 		</paymentDetail>
+		<extraCustomData>
+            <customData>
+                <key>CreationSystem</key>
+                <value>HPH</value>
+            </customData>
+            <customData>
+                <key>ParentSystem</key>
+                <value>WEB</value>
+            </customData>
+            <customData>
+                <key>Country</key>
+                <value>ES</value>
+            </customData>
+            <customData>
+                <key>PriceType</key>
+                <value>PVP</value>
+            </customData>
+            <customData>
+                <key>ClientType</key>
+                <value>A</value>
+            </customData>
+        </extraCustomData>
 	</booking>
 </BookingRetrievalResponse>
 ````
@@ -473,7 +517,26 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 				"timeRelevant": "false", 
 				"amount": "350.00"
 			  }]				  
-		  }
+		  },
+		  "extraCustomData": {
+            "customData": [
+                {
+                    "value": "HPH",
+                    "key": "CreationSystem"
+                },
+                {
+                    "value": "WEB",
+                    "key": "ParentSystem"
+                },
+                {
+                    "value": "ES",
+                    "key": "Country"
+                },
+                {
+                    "value": "PVP",
+                    "key": "PriceType"
+                }
+            ]}
         },
         {
           "id": "2",
@@ -613,7 +676,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 				  "cardTypeCode": "VISA",
 				  "holder": "Elena Ballester", 
 				  "number" : "4111111111111111",
-				  "expiryDate": "01/01/2020"
+				  "expiryDate": "01/01/2020",
 				  "securityCode": "123"
 			  }
 		  },
@@ -624,7 +687,27 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 			  "bookingRoomId": "2",
 			  "amount": "150.0"
 		  }]
-	  }]
+	  }],
+      "extraCustomData": {
+            "customData": [
+                {
+                    "value": "HPH",
+                    "key": "CreationSystem"
+                },
+                {
+                    "value": "WEB",
+                    "key": "ParentSystem"
+                },
+                {
+                    "value": "ES",
+                    "key": "Country"
+                },
+                {
+                    "value": "PVP",
+                    "key": "PriceType"
+                }
+            ]
+		}
     }
   }
 }
@@ -744,6 +827,10 @@ booking[] | **Booking** | No | Información de una reserva de hotel
 ↳↳↳↳ timeRelevant| *Boolean* | Sí | Elemento que indica si las horas en la fecha de cancelación son relevantes o se debe tomar sólo la fecha como dato significativo
 ↳↳↳↳ amount| *Double* | Sí | Importe que se aplicará al cancelar la habitación
 ↳↳↳↳ description| *String* | No | Descripción de los gastos de cancelación
+↳ extraCustomData | **ExtraCustomData** | No | Indica diversos aspectos de la reserva que no tienen cabida en el formato básico de la reserva.
+↳↳ customData[] | *CustomData* | No | Valor de la reserva que no tiene cabida en el formato básico de la misma.
+↳↳↳ key | *String* | Sí | Clave que referencia el valor. Ver apartado de ExtraCustomData de la documentación para ver los posibles valores.
+↳↳↳ value | *String* | Sí | Valor de la reserva referenciado por el campo 'Key'.
 ↳ bookingSupplement[]| **BookingSupplement** | No | Información de suplemento reservado
 ↳↳ code| *String* | Sí | Código del suplemento opcional reservado
 ↳↳ name| *String* | Sí | Nombre del suplemento opcional reservado
@@ -881,6 +968,10 @@ booking[] | **Booking** | No | Información de una reserva de hotel
 ↳↳↳↳↳ hashedValue| *String* | No | Número de la tarjeta
 ↳↳↳↳↳ seriesCode| *String* | No | CVC
 ↳↳↳↳↳ expiryDate| *Date* | Sí | Fecha de caducidad (dd/MM/yyy)
+↳ extraCustomData | **ExtraCustomData** | No | Indica diversos aspectos de la reserva que no tienen cabida en el formato básico de la reserva.
+↳↳ customData[] | *CustomData* | No | Valor de la reserva que no tiene cabida en el formato básico de la misma.
+↳↳↳ key | *String* | Sí | Clave que referencia el valor. Ver apartado de ExtraCustomData de la documentación para ver los posibles valores.
+↳↳↳ value | *String* | Sí | Valor de la reserva referenciado por el campo 'Key'.
 ↳ saleRules| **SaleRules** | No | Elemento que contiene las reglas de ventas cargadas en Hotetec, y que se han aplicado en la reserva.
 ↳↳ bookingRoom[]| *Room* | No | Elemento que contiene las reglas de venta aplicadas en una habitación en concreto.
 ↳↳↳ @id| *Integer* | Sí | Identificador de la habitación

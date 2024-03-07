@@ -80,6 +80,10 @@ Flight_Departure| *String* | Indica la información recibida en la reserva sobre
 CostDate| *String* | Indica la fecha en que se realizó la valoración de los costes de la reserva (dd/MM/yyyy)
 CreationSystem| *String* | Indica el sistema de creacion de la reserva
 Loyalty| *String* | Si viene informado, indica que la reserva es de tipo GENIUS (para las reservas de Booking.com)
+WEB.HOTEL.Hotelverse.Locator | *String* | Si viene informado, indica el localizador de la reserva de Hotelverse
+WEB.HOTEL.Hotelverse.RoomNumber | *String* | Si viene informado, indica el número de habitación de Hotelverse
+WEB.HOTEL.Hotelverse.IsOnRequest | *String* | Si viene informado, indica si la habitación es de tipo 'OnRequest' en Hotelverse
+WEB.HOTEL.Hotelverse.Status | *String* | Si viene informado, indica si la reserva está confirmada o no, en Hotelverse
 
 <aside class="notice">
 <sup>1</sup>&nbsp;&nbsp;&nbsp;Los tipos de cliente actuales son: M (Mayorista) / A (Alojamiento) / C (Channel Manager) / O (Operador) / G (Agencia de viajes)
