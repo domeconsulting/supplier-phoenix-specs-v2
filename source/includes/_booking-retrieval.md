@@ -136,6 +136,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 				<typeDocument>Passport</typeDocument>
 				<numberDocument>A123456789</numberDocument>
 			</document>
+			<language>ES</language>
 		</endCustomer>
 		<commission>
 			<serviceCommission>
@@ -437,7 +438,8 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 		"document": {
 			"typeDocument": "Passport",
 			"numberDocument": "A123456789"
-		}
+		},
+		"language": "ES"
       },
       "commission": {
 		  "serviceCommission": [{
@@ -771,6 +773,7 @@ booking[] | **Booking** | No | Información de una reserva de hotel
 ↳↳ mail| *String* | No | Email del cliente final
 ↳↳ phone| *String* | No | Teléfono de contacto del cliente final
 ↳↳ nationality| *String* | No | Nacionadlidad (2 letter ISO 3166)
+↳↳ language| *String* | No | Idioma del cliente
 ↳↳ address| *String* | No | Dirección indicada para el cliente
 ↳↳ document| **Document** | No | Información referente al documento de identificación de la persona de contacto
 ↳↳↳ typeDocument| *String* | No | Tipo de documento (DNI, NIE, Passport o IdentityCard)
