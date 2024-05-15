@@ -648,6 +648,12 @@ gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento 
 <td>1.1.30</td>
 <td>Se añade el elemento extraCustomData a nivel de habitación (BookingRoom).</td>
 </tr>
+<tr>
+<td>15/05/2024</td>
+<td>Rafel Mestre</td>
+<td>1.1.31</td>
+<td>Se añade el elemento language (idioma) a nivel de cliente final (endCustomer).</td>
+</tr>
 </tbody></table>
 <h1 id='protocolo-de-conexion'>Protocolo de conexión</h1>
 <ul>
@@ -2500,6 +2506,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
                 <span class="nt">&lt;typeDocument&gt;</span>Passport<span class="nt">&lt;/typeDocument&gt;</span>
                 <span class="nt">&lt;numberDocument&gt;</span>A123456789<span class="nt">&lt;/numberDocument&gt;</span>
             <span class="nt">&lt;/document&gt;</span>
+            <span class="nt">&lt;language&gt;</span>ES<span class="nt">&lt;/language&gt;</span>
         <span class="nt">&lt;/endCustomer&gt;</span>
         <span class="nt">&lt;commission&gt;</span>
             <span class="nt">&lt;serviceCommission&gt;</span>
@@ -2798,7 +2805,8 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
         </span><span class="nl">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"typeDocument"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Passport"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"numberDocument"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A123456789"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ES"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"commission"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"serviceCommission"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
@@ -3309,6 +3317,12 @@ o bien las reservas de un hotel creadas, canceladas o modificadas dentro de un r
 <td><em>String</em></td>
 <td>No</td>
 <td>Nacionadlidad (2 letter ISO 3166)</td>
+</tr>
+<tr>
+<td>↳↳ language</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Idioma del cliente</td>
 </tr>
 <tr>
 <td>↳↳ address</td>
