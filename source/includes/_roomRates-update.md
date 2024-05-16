@@ -403,7 +403,7 @@ roomRate[] | **RoomRate** | Sí             | Información asociada a una combin
 ↳↳↳ release| *Integer* | No             | Días de release (0: No hay release)
 ↳↳↳ closedOnCheckIn| *Boolean* | No             | Indica si no está permitida la entrada
 ↳↳↳ closedOnCheckOut| *Boolean* | No             | Indica si no está permitida la salida
-↳↳↳ price[]| **Price** | Sí             | Precio para una ocupación
+↳↳↳ price[]| **Price** | No<sup>3</sup> | Precio para una ocupación
 ↳↳↳↳ adults| *Integer* | Sí             | Número de adultos
 ↳↳↳↳ children| *Integer* | Sí             | Número de niños
 ↳↳↳↳ amount| *Double* | Sí             | Precio para el total de la ocupación (#.##)
@@ -427,4 +427,8 @@ notification | **Notification** | No |Información de notificación (Error o War
 
 <aside class="notice">
 <sup>2</sup>&nbsp;&nbsp;&nbsp; Si se quiere actualizar la información de precios y restricciones el tag mealPlan es obligatorio.
+</aside>
+
+<aside class="notice">
+<sup>3</sup>&nbsp;&nbsp;&nbsp; Si se quieren actualizar sólo restricciones, sin enviar precios (price), para que se actualicen en nuestro sistema, tiene que haber cargado previamente algún precio. Sinó no se cargarán las restricciones.
 </aside>
