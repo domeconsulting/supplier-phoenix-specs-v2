@@ -654,6 +654,12 @@ gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento 
 <td>1.1.31</td>
 <td>Se añade el elemento language (idioma) a nivel de cliente final (endCustomer).</td>
 </tr>
+<tr>
+<td>16/05/2024</td>
+<td>Rafel Mestre</td>
+<td>1.1.32</td>
+<td>Se cambia la obligatoriedad del campo price en la petición RoomRatesUpdateRequest. Ahora no es requerido.</td>
+</tr>
 </tbody></table>
 <h1 id='protocolo-de-conexion'>Protocolo de conexión</h1>
 <ul>
@@ -1579,7 +1585,7 @@ Se puede actualizar:
 <tr>
 <td>↳↳↳ price[]</td>
 <td><strong>Price</strong></td>
-<td>Sí</td>
+<td>No<sup>3</sup></td>
 <td>Precio para una ocupación</td>
 </tr>
 <tr>
@@ -1656,6 +1662,10 @@ Se puede actualizar:
 
 <aside class="notice">
 <sup>2</sup>&nbsp;&nbsp;&nbsp; Si se quiere actualizar la información de precios y restricciones el tag mealPlan es obligatorio.
+</aside>
+
+<aside class="notice">
+<sup>3</sup>&nbsp;&nbsp;&nbsp; Si se quieren actualizar sólo restricciones, sin enviar precios (price), para que se actualicen en nuestro sistema, tiene que haber cargado previamente algún precio. Sinó no se cargarán las restricciones.
 </aside>
 <h1 id='roomratesretrieval'>RoomRatesRetrieval</h1>
 <blockquote>
