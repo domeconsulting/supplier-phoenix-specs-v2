@@ -491,12 +491,13 @@ booking | **Booking** | No | Información de una reserva de hotel
 ↳↳↳ numberDocument| *String* | No | Número de documento
 ↳ commision| **Commission** | No | Información sobre las comisiones aplicadas en la reserva
 ↳↳ serviceCommission[]| *ServiceCommission* | No | Información específica sobre un servicio reservado
-↳↳↳ serviceId| *Integer* | Sí | Identificador que identifica la habitación reservada
+↳↳↳ serviceId| *String* | Sí | Identificador que identifica la habitación reservada
 ↳↳↳ commissionAmount| *Double* | No| Importe de la comisión aplicada
 ↳↳↳ commissionPercentage| *Double* | No | Porcentage de la comisión aplicada
 ↳ hotelCode| *Integer* | Sí | Código de hotel
 ↳ currencyCode| *String* | Sí | Código de divisa (Códigos ISO 4217)
 ↳ bookingRoom[]| **BookingRoom** | Sí | Información de habitación de hotel reservada
+↳↳ @id| *String* | Sí | Identificador de la habitación
 ↳↳ checkIn| *Date* | Sí | Fecha de entrada (dd/MM/yyy)
 ↳↳ checkOut| *Date* | Sí | Fecha de salida (dd/MM/yyy)
 ↳↳ status| *Enum* | Sí | Estado de la reserva (Confirmed, Cancelled, OnRequest)
@@ -544,7 +545,7 @@ booking | **Booking** | No | Información de una reserva de hotel
 ↳↳ description| *String* | No | Descripción detallada del suplemento opcional reservado
 ↳↳ checkIn| *Date* | No | Fecha de inicio del suplemento (dd/MM/yyy)
 ↳↳ checkOut| *Date* | No | Fecha de fin del suplemento (dd/MM/yyy)
-↳↳ bookingRoomId| *Integer* | No | Identificador de la habitación reservada, si el suplemento referencia a una habitación en concreto
+↳↳ bookingRoomId| *String* | No | Identificador de la habitación reservada, si el suplemento referencia a una habitación en concreto
 ↳↳ guestId[]| *Integer* | No | Identificador del pasajero al que se hace referencia, si el suplemento referencia a un pasajero/os en concreto
 ↳↳ amount| *Double* | Sí | Importe total del suplemento opcional reservado
 ↳↳ commissionSupplementAmount| *Double* | No | Comisión del suplemento (#.##)
