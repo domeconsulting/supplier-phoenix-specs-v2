@@ -22,8 +22,9 @@ includes:
   - booking-retrieval
   - extraCustomData
   - booking-notification
-  - booking-confirm
   - booking-add-payment
+  - booking-confirm
+  - booking-resale
 
 search: true
 ---
