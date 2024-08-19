@@ -23,6 +23,7 @@ includes:
   - extraCustomData
   - booking-notification
   - booking-add-payment
+  - booking-cancel
   - booking-confirm
   - booking-resale
 

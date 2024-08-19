@@ -40,3 +40,4 @@ Fecha | Autor | Versión | Cambios realizados
 15/05/2024 | Rafel Mestre | 1.1.31 | Se añade el elemento language (idioma) a nivel de cliente final (endCustomer).
 16/05/2024 | Rafel Mestre | 1.1.32 | Se cambia la obligatoriedad del campo price en la petición RoomRatesUpdateRequest. Ahora no es requerido.
 20/08/2024 | Rafel Mestre | 1.1.33 | Nuevo mensaje de reventa de reservas (BookingResaleMessage)
+20/08/2024 | Rafel Mestre | 1.1.34 | Nuevo mensaje de cancelación de reservas (BookingCancelMessage)
