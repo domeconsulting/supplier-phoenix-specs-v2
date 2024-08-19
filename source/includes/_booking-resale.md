@@ -661,7 +661,7 @@ booking | **Booking** | No | Información de una reserva de hotel
 ↳↳↳↳ amount| *Double* | Sí | Importe que se aplicará al cancelar la habitación
 ↳↳↳↳ description| *String* | No | Descripción de los gastos de cancelación
 ↳ bookingSupplement[]| **BookingSupplement** | No | Información de suplemento reservado
-↳↳ code| *String* | Sí | Código del suplemento opcional reservado
+↳↳ code| *String* | No | Código del suplemento opcional reservado. Sólo se informará si se dispone del mismo, lo cual será siempre en las reservas internas, y de forma opcional en las externas.
 ↳↳ name| *String* | Sí | Nombre del suplemento opcional reservado
 ↳↳ typeSupplement| *String* | Sí | Indica el tipo de suplemento que tratamos (Mandatory / Optional / SalePolicy)
 ↳↳ internalName| *String* | No | Nombre interno de la política comercial (suplementos del tipo SP) aplicada en la reserva.
