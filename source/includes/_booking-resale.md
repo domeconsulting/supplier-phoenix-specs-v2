@@ -15,8 +15,8 @@
     <reference>TESTHTT240326SFESKH</reference>
     <endCustomer>
         <name>Customer Name</name>
-        <firstName>Customer</firstName>
-        <lastName>Name</lastName>
+        <firstName>Surname 1</firstName>
+        <lastName>Surname 2</lastName>
         <mail>customername@hotetec.com</mail>
         <phone>+34666777888</phone>
         <document>
@@ -57,8 +57,8 @@
     "reference": "TESTHTT240326SFESKH",
     "endCustomer": {
       "name": "Customer Name",
-      "firstName": "Customer",
-      "lastName": "Name",
+      "firstName": "Surname 1",
+      "lastName": "Surname 2",
       "mail": "customername@hotetec.com",
       "phone": 34666777888,
       "document": {
@@ -117,8 +117,8 @@
         </bookingClient>
         <endCustomer>
             <name>Customer Name</name>
-            <firstName>Customer</firstName>
-            <lastName>Name</lastName>
+            <firstName>Surname 1</firstName>
+            <lastName>Surname 2</lastName>
             <mail>customername@hotetec.com</mail>
             <phone>+34666777888</phone>
             <nationality>es</nationality>
@@ -328,8 +328,8 @@
       },
       "endCustomer": {
         "name": "Customer Name",
-        "firstName": "Customer",
-        "lastName": "Name",
+        "firstName": "Surname 1",
+        "lastName": "Surname 2",
         "mail": "customername@hotetec.com",
         "phone": 34666777888,
         "nationality": "es",
@@ -558,9 +558,9 @@ credentials | **Credentials** | Sí |Credenciales de autenticación del usuario 
 reference | *String* | Sí | Localizador de la reserva de Hotetec
 hotelCode | *Integer* | Sí | Código de hotel
 endCustomer| **EndCustomer** | Sí | Información del cliente final de la reserva
-↳ name| *String* | Sí | Nombre completo del cliente final
-↳ firstName| *String* | Sí | Nombre del cliente final
-↳ lastName| *String* | Sí | Apellido del cliente final
+↳ name| *String* | Sí | Nombre del cliente final
+↳ firstName| *String* | Sí | Primer apellido del cliente final
+↳ lastName| *String* | Sí | Segundo apellido del cliente final
 ↳ birthDate| *Date* | No | Fecha de nacimiento (dd/MM/yyy)
 ↳ mail| *String* | Sí | Email del cliente final
 ↳ phone| *String* | No | Teléfono de contacto del cliente final
