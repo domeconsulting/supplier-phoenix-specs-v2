@@ -1,6 +1,6 @@
 # Control de versiones
 
-<aside class="notice">Versión actual <b>1.0.0</b></aside>
+<aside class="notice">Versión actual <b>1.1.35</b></aside>
 
 Fecha | Autor | Versión | Cambios realizados
 --------- | ----------- |---------| ----------- 
