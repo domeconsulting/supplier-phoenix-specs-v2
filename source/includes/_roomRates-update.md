@@ -85,38 +85,112 @@
 ````xml
 <?xml version="1.0" encoding="UTF-8"?>
 <RoomRatesUpdateRequest>
-    <credentials>
-        <systemCode>SFO</systemCode>
-        <vendorCode>FOO</vendorCode>
-        <user>BAR</user>
-        <password>FOOBAR</password>
-    </credentials>
-    <hotelCode>1234</hotelCode>
-    <rate rateCode="BASE">
-        <room roomCode="DBL#STD">
-            <roomRateDate dateFrom="01/01/2016" dateTo="07/01/2016">
-                <mealPlan code="RO">
-                    <minimumStay>2</minimumStay>
-                    <maximumStay>7</maximumStay>
-                    <closedOnCheckIn>false</closedOnCheckIn>
-                    <closedOnCheckOut>false</closedOnCheckOut>
-                    <release>0</release>
-                    <price>
-                        <adults>2</adults>
-                        <children>0</children>
-                        <amount>100.0</amount>
-                        <status>Open</status>
-                    </price>
-                    <price>
-                        <adults>2</adults>
-                        <children>1</children>
-                        <amount>125.0</amount>
-                        <status>Open</status>
-                    </price>
-                </mealPlan>                
-            </roomRateDate>            
-        </room>
-    </rate>
+	<credentials>
+		<systemCode>SFO</systemCode>
+		<vendorCode>FOO</vendorCode>
+		<user>BAR</user>
+		<password>FOOBAR</password>
+	</credentials>
+	<hotelCode>1234</hotelCode>
+	<rate rateCode="BASE">
+		<room roomCode="DBL#STD">
+			<roomRateDate dateFrom="01/01/2016" dateTo="07/01/2016">
+				<mealPlan code="RO">
+					<minimumStay>2</minimumStay>
+					<maximumStay>7</maximumStay>
+					<closedOnCheckIn>false</closedOnCheckIn>
+					<closedOnCheckOut>false</closedOnCheckOut>
+					<release>0</release>
+					<price>
+						<status>Open</status>
+						<adults>2</adults>
+						<children>0</children>
+						<amount>100.0</amount>
+						<priceBreakdown>
+							<roomBreakdown>
+								<amount>90</amount>
+								<breakdown>
+									<paxBreakdown>
+										<paxType>Adult</paxType>
+										<position>1</position>
+										<amount>45</amount>
+									</paxBreakdown>
+									<paxBreakdown>
+										<paxType>Adult</paxType>
+										<position>2</position>
+										<amount>45</amount>
+									</paxBreakdown>
+								</breakdown>
+							</roomBreakdown>
+							<mealPlanBreakdown>
+								<amount>10</amount>
+								<breakdown>
+									<paxBreakdown>
+										<paxType>Adult</paxType>
+										<position>1</position>
+										<amount>5</amount>
+									</paxBreakdown>
+									<paxBreakdown>
+										<paxType>Adult</paxType>
+										<position>2</position>
+										<amount>5</amount>
+									</paxBreakdown>
+								</breakdown>
+							</roomBreakdown>
+						</priceBreakdown>						
+					</price>
+					<price>
+						<adults>2</adults>
+						<children>1</children>
+						<status>Open</status>						
+						<amount>125.0</amount>
+						<priceBreakdown>
+							<roomBreakdown>
+								<amount>85</amount>
+								<breakdown>
+									<paxBreakdown>
+										<paxType>Adult</paxType>
+										<position>1</position>
+										<amount>40</amount>
+									</paxBreakdown>
+									<paxBreakdown>
+										<paxType>Adult</paxType>
+										<position>2</position>
+										<amount>35</amount>
+									</paxBreakdown>
+									<paxBreakdown>
+										<paxType>Child</paxType>
+										<position>1</position>
+										<amount>10</amount>
+									</paxBreakdown>									
+								</breakdown>
+							</roomBreakdown>
+							<mealPlanBreakdown>
+								<amount>40</amount>
+								<breakdown>
+									<paxBreakdown>
+										<paxType>Adult</paxType>
+										<position>1</position>
+										<amount>15</amount>
+									</paxBreakdown>
+									<paxBreakdown>
+										<paxType>Adult</paxType>
+										<position>2</position>
+										<amount>15</amount>
+									</paxBreakdown>
+									<paxBreakdown>
+										<paxType>Cihld</paxType>
+										<position>2</position>
+										<amount>10</amount>
+									</paxBreakdown>									
+								</breakdown>
+							</roomBreakdown>
+						</priceBreakdown>
+					</price>
+				</mealPlan>
+			</roomRateDate>
+		</room>
+	</rate>
 </RoomRatesUpdateRequest>
 ````
 
@@ -151,13 +225,81 @@
                     "adults": "2",
                     "children": "0",
                     "amount": "100.0",
-                    "status": "Open"
+                    "status": "Open", 
+					"priceBreakdown": {
+						"roomBreakdown": {
+							"amount": 90, 
+							"breakdown": {
+								"paxBreakdown": [{
+									"paxType": "Adult",
+									"position": 1
+									"amount": 45
+								}, {
+									"paxType": "Adult",
+									"position": 2
+									"amount": 45
+								}]
+							}
+						}, 
+						"mealPlanBreakdown": {
+							"amount": 10, 
+							"breakdown": {
+								"paxBreakdown": [{
+									"paxType": "Adult",
+									"position": 1
+									"amount": 5
+								}, {
+									"paxType": "Adult",
+									"position": 2
+									"amount": 5
+								}]
+							}
+						}, 
+					}
                   },
                   {
                     "adults": "2",
                     "children": "1",
+                    "status": "Open", 					
                     "amount": "125.0",
-                    "status": "Open"
+					"priceBreakdown": {
+						"roomBreakdown": {
+							"amount": 85, 
+							"breakdown": {
+								"paxBreakdown": [{
+									"paxType": "Adult",
+									"position": 1
+									"amount": 40
+								}, {
+									"paxType": "Adult",
+									"position": 2
+									"amount": 35
+								}, {
+									"paxType": "Child",
+									"position": 2
+									"amount": 10
+								}]
+							}
+						}, 
+						"mealPlanBreakdown": {
+							"amount": 40, 
+							"breakdown": {
+								"paxBreakdown": [{
+									"paxType": "Adult",
+									"position": 1
+									"amount": 15
+								}, {
+									"paxType": "Adult",
+									"position": 2
+									"amount": 15
+								}, {
+									"paxType": "Child",
+									"position": 2
+									"amount": 15
+								}]
+							}
+						}, 
+					}					
                   }
                 ]
               }          
@@ -406,8 +548,21 @@ roomRate[] | **RoomRate** | Sí             | Información asociada a una combin
 ↳↳↳ price[]| **Price** | No<sup>3</sup> | Precio para una ocupación
 ↳↳↳↳ adults| *Integer* | Sí             | Número de adultos
 ↳↳↳↳ children| *Integer* | Sí             | Número de niños
-↳↳↳↳ amount| *Double* | Sí             | Precio para el total de la ocupación (#.##)
 ↳↳↳↳ status| *Enum* | Sí             | Estado de la ocupación
+↳↳↳↳ amount| *Double* | Sí             | Precio para el total de la ocupación (#.##)
+↳↳↳↳ priceBreakdown| **PriceBreakdown** | No             | Desglose de precios
+↳↳↳↳↳ roomBreakdown| **RoomBreakdown** | Si             | Desglose de precios de la estancia
+↳↳↳↳↳ amount| *Double* | Si             | Precio total del desglose de la estancia
+↳↳↳↳↳ mealPlanBreakdown| **RoomBreakdown** | Si             | Desglose de precios del regimen
+↳↳↳↳↳ amount| *Double* | Si             | Precio total del desglose del regimen
+↳↳↳↳↳ breakdown| **Breakdown** | Si             | Desglose de la estancia por tipo de pasajero y posicion
+↳↳↳↳↳ paxBreakdown| **PaxBreakdown** | Si             | Desglose por tipo de pasajero y posicion
+↳↳↳↳↳↳ paxBreakdown| **PaxBreakdown** | Si             | Desglose por tipo de pasajero y posicion
+↳↳↳↳↳↳ paxType| *Enum* | Si             | Tipo de pasajero (Adult, Child, Baby)
+↳↳↳↳↳↳ position| *Integer* | Si             | Posicion del pasajero (1r Adulto, 2o Adulto, 2o niño,...)
+↳↳↳↳↳↳ amount| *Double* | Si             | Precio del pasajero 
+
+
 
 ### RoomRatesUpdateResponse
 
