@@ -700,6 +700,12 @@ gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento 
 <td>1.1.35</td>
 <td>Desglose de precios por habitacion, regimen y pasajero (RoomRatesUpdateRequest)</td>
 </tr>
+<tr>
+<td>11/12/2024</td>
+<td>Rafel Mestre</td>
+<td>1.1.36</td>
+<td>Envío de las etiquetas asignadas a la persona de contacto de la reserva</td>
+</tr>
 </tbody></table>
 <h1 id='protocolo-de-conexion'>Protocolo de conexión</h1>
 <ul>
@@ -2765,6 +2771,10 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
                 <span class="nt">&lt;numberDocument&gt;</span>A123456789<span class="nt">&lt;/numberDocument&gt;</span>
             <span class="nt">&lt;/document&gt;</span>
             <span class="nt">&lt;language&gt;</span>ES<span class="nt">&lt;/language&gt;</span>
+            <span class="nt">&lt;labels&gt;</span>
+                <span class="nt">&lt;label&gt;</span>ORO<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;label&gt;</span>REPETIDOR<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;/labels&gt;</span>
         <span class="nt">&lt;/endCustomer&gt;</span>
         <span class="nt">&lt;commission&gt;</span>
             <span class="nt">&lt;serviceCommission&gt;</span>
@@ -3064,6 +3074,11 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
             </span><span class="nl">"typeDocument"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Passport"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"numberDocument"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A123456789"</span><span class="w">
         </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"labels"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ORO"</span><span class="w">
+            </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"label"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"REPETIDOR"</span><span class="w">
+        </span><span class="p">}],</span><span class="w">
         </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ES"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"commission"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -3605,6 +3620,18 @@ o bien las reservas de un hotel creadas, canceladas o modificadas dentro de un r
 <td><em>String</em></td>
 <td>No</td>
 <td>Número de documento</td>
+</tr>
+<tr>
+<td>↳↳ labels</td>
+<td><strong>Labels</strong></td>
+<td>No</td>
+<td>Información referente a las etiquetas asignadas a la persona de contacto</td>
+</tr>
+<tr>
+<td>↳↳↳ label[]</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Etiqueta asignada a la persona de contacto. Estas etiquetas se definen en el apartado CRM del backOffice de Hotetec.</td>
 </tr>
 <tr>
 <td>↳ commision</td>
@@ -5800,6 +5827,18 @@ De esta forma, se evitan posibles problemas de overbooking al tener la informaci
 <td>Número de documento</td>
 </tr>
 <tr>
+<td>↳↳ labels</td>
+<td><strong>Labels</strong></td>
+<td>No</td>
+<td>Información referente a las etiquetas asignadas a la persona de contacto</td>
+</tr>
+<tr>
+<td>↳↳↳ label[]</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Etiqueta asignada a la persona de contacto. Estas etiquetas se definen en el apartado CRM del backOffice de Hotetec.</td>
+</tr>
+<tr>
 <td>↳ commision</td>
 <td><strong>Commission</strong></td>
 <td>No</td>
@@ -7605,6 +7644,18 @@ De esta forma, se evitan posibles problemas de overbooking al tener la informaci
 <td><em>String</em></td>
 <td>No</td>
 <td>Número de documento</td>
+</tr>
+<tr>
+<td>↳↳ labels</td>
+<td><strong>Labels</strong></td>
+<td>No</td>
+<td>Información referente a las etiquetas asignadas a la persona de contacto</td>
+</tr>
+<tr>
+<td>↳↳↳ label[]</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Etiqueta asignada a la persona de contacto. Estas etiquetas se definen en el apartado CRM del backOffice de Hotetec.</td>
 </tr>
 <tr>
 <td>↳ commision</td>
@@ -9728,6 +9779,18 @@ De esta forma, se evitan posibles problemas de overbooking al tener la informaci
 <td><em>String</em></td>
 <td>No</td>
 <td>Número de documento</td>
+</tr>
+<tr>
+<td>↳↳ labels</td>
+<td><strong>Labels</strong></td>
+<td>No</td>
+<td>Información referente a las etiquetas asignadas a la persona de contacto</td>
+</tr>
+<tr>
+<td>↳↳↳ label[]</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Etiqueta asignada a la persona de contacto. Estas etiquetas se definen en el apartado CRM del backOffice de Hotetec.</td>
 </tr>
 <tr>
 <td>↳ commision</td>
