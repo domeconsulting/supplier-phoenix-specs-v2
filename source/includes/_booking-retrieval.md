@@ -137,6 +137,10 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 				<numberDocument>A123456789</numberDocument>
 			</document>
 			<language>ES</language>
+			<labels>
+                <label>ORO</label>
+                <label>REPETIDOR</label>
+            </labels>
 		</endCustomer>
 		<commission>
 			<serviceCommission>
@@ -439,6 +443,11 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 			"typeDocument": "Passport",
 			"numberDocument": "A123456789"
 		},
+		"labels": [{
+			"label" : "ORO"
+			}, {
+			"label" : "REPETIDOR"
+		}],
 		"language": "ES"
       },
       "commission": {
@@ -778,6 +787,8 @@ booking[] | **Booking** | No | Información de una reserva de hotel
 ↳↳ document| **Document** | No | Información referente al documento de identificación de la persona de contacto
 ↳↳↳ typeDocument| *String* | No | Tipo de documento (DNI, NIE, Passport o IdentityCard)
 ↳↳↳ numberDocument| *String* | No | Número de documento
+↳↳ labels| **Labels** | No | Información referente a las etiquetas asignadas a la persona de contacto
+↳↳↳ label[]| *String* | No | Etiqueta asignada a la persona de contacto. Estas etiquetas se definen en el apartado CRM del backOffice de Hotetec.
 ↳ commision| **Commission** | No | Información sobre las comisiones aplicadas en la reserva
 ↳↳ serviceCommission[]| *ServiceCommission* | No | Información específica sobre un servicio reservado
 ↳↳↳ serviceId| *String* | Sí | Identificador que identifica la habitación reservada

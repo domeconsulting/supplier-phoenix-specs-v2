@@ -42,3 +42,4 @@ Fecha | Autor | Versión | Cambios realizados
 20/08/2024 | Rafel Mestre | 1.1.33 | Nuevo mensaje de reventa de reservas (BookingResaleMessage)
 20/08/2024 | Rafel Mestre | 1.1.34 | Nuevo mensaje de cancelación de reservas (BookingCancelMessage)
 17/11/2024 | Isaac Fullana | 1.1.35 | Desglose de precios por habitacion, regimen y pasajero (RoomRatesUpdateRequest)
+11/12/2024 | Rafel Mestre | 1.1.36 | Envío de las etiquetas asignadas a la persona de contacto de la reserva
