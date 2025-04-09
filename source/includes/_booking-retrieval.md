@@ -136,11 +136,11 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 				<typeDocument>Passport</typeDocument>
 				<numberDocument>A123456789</numberDocument>
 			</document>
-			<language>ES</language>
 			<labels>
                 <label>ORO</label>
                 <label>REPETIDOR</label>
             </labels>
+			<language>ES</language>
 		</endCustomer>
 		<commission>
 			<serviceCommission>
@@ -303,6 +303,17 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 			<amount>50.00</amount>
 			<mandatory>true</mandatory>
 		</bookingSupplement>
+		<bookingSupplement>
+            <code>[EtT]Supplement(PpT)TESTHTT@53089@21599@1@EUR</code>
+            <name>TEST 2 - 1</name>
+            <typeSupplement>Optional</typeSupplement>
+            <internalTypeSupplement>ESP</internalTypeSupplement>
+            <bookingRoomId>1</bookingRoomId>
+            <amount>10.0</amount>
+            <commissionSupplementAmount>0.0</commissionSupplementAmount>
+            <netSupplementAmount>10.0</netSupplementAmount>
+            <mandatory>false</mandatory>
+        </bookingSupplement>
 		<remark>
 			<code>Informative</code>
 			<from>Hotel</from>
@@ -330,23 +341,27 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 			<description>Tarjeta de prepago</description>
 			<status>Pending</status>
 		</bookingPayment>
-		<paymentCardDetail>
-			<holder>Elena Ballester</holder>
-			<number>4111111111111111</number>
-			<expiryDate>01/01/2020</expiryDate>
-			<securityCode>123</securityCode>
-		</paymentCardDetail>
+		    <paymentCardDetail>
+		    <holder>John Smith</holder>
+		    <number>cust_677b20db-a28b-4e2a-b3e0-da8c19e2fec3#1DCA3173-9DD0-4F2D-8420-266808C0A4EB</number>
+		    <expiryDate>01/10/2027</expiryDate>
+        </paymentCardDetail>
 		<paymentDetail>
 			<action>Charge</action>
 			<paymentStatus>Ok</paymentStatus>
 			<type>ExternalManaged</type>
 			<date>24/01/2019 17:18</date>
 			<amount>2635.663</amount>
-			<externalManagedDetail>
-				<externalSystemCode>TARJETA VIRTUAL</externalSystemCode>
-				<externalReference>5227</externalReference>
-				<status>Ok</status>
-			</externalManagedDetail>
+			<cardDetail>
+                <card>
+                    <holder>John Smith</holder>
+                    <number>5004</number>
+                    <expiryDate>01/10/2027</expiryDate>
+                </card>
+                <systemCode>PNN</systemCode>
+                <reference>677b20db-a28b-4e2a-b3e0-da8c19e2fec3</reference>
+                <authorizedCode>075128</authorizedCode>
+            </cardDetail>
 			<breakdown>
 				<bookingRoomId>1</bookingRoomId>
 				<amount>350.0</amount>
@@ -383,27 +398,38 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 			</breakdown>
 		</paymentDetail>
 		<extraCustomData>
-            <customData>
-                <key>CreationSystem</key>
-                <value>HPH</value>
-            </customData>
-            <customData>
-                <key>ParentSystem</key>
-                <value>WEB</value>
-            </customData>
-            <customData>
-                <key>Country</key>
-                <value>ES</value>
-            </customData>
-            <customData>
-                <key>PriceType</key>
-                <value>PVP</value>
-            </customData>
-            <customData>
-                <key>ClientType</key>
-                <value>A</value>
-            </customData>
-        </extraCustomData>
+			<customData>
+				<key>CreationSystem</key>
+				<value>HPH</value>
+			</customData>
+			<customData>
+				<key>ParentSystem</key>
+				<value>WEB</value>
+			</customData>
+			<customData>
+				<key>Country</key>
+				<value>ES</value>
+			</customData>
+			<customData>
+				<key>PriceType</key>
+				<value>PVP</value>
+			</customData>
+			<customData>
+				<key>ClientType</key>
+				<value>A</value>
+			</customData>
+		</extraCustomData>
+		<saleRules>
+			<bookingRoom id="1">
+				<saleRulesByDay>
+					<day>27/11/2024</day>
+					<saleRule>
+						<name>EBB PLAYA SUMMER 0.7</name>
+						<percentage>-18.0</percentage>
+					</saleRule>
+				</saleRulesByDay>
+			</bookingRoom>
+        </saleRules>
 	</booking>
 </BookingRetrievalResponse>
 ````
@@ -415,213 +441,230 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
     "booking": {
       "reference": "EPL10032017140800-SALE",
       "creationDate": "10/03/2017 14:15",
-	  "modificationDate": "10/03/2017 14:17",
-	  "country": "ES",
+      "modificationDate": "10/03/2017 14:17",
+      "country": "ES",
       "checkIn": "15/04/2017",
       "checkOut": "18/04/2017",
       "status": "Confirmed",
-      "amount": "550.00",
-	  "amountToInvoice": "550.00",
+      "amount": 550,
+      "amountToInvoice": 625.25,
       "bookingClient": {
         "clientCode": "EPL",
         "clientName": "Europlayas",
-		"fiscalClientName": "Europlayas S.L.",
-		"addressClient": "Parc Bit, 14", 
-		"postalClientCode": "07001",
-		"countryClient": "ES",
-		"cifClient": "A0000000",
-		"emailClient": "europlayas@test.com",
+        "fiscalClientName": "Europlayas S.L.",
+        "addressClient": "Parc Bit, 14",
+        "postalClientCode": 7001,
+        "countryClient": "ES",
+        "cifClient": "A00000000",
+        "emailClient": "europlayas@test.com",
         "clientReference": "AA45645D55"
       },
       "endCustomer": {
         "name": "Elena Ballester",
-		"firstName": "Elena",
-		"lastName": "Ballester",		
+        "firstName": "Elena",
+        "lastName": "Ballester",
         "mail": "elena_ballester1234@mail.com",
-        "phone": "003466667788",
-		"document": {
-			"typeDocument": "Passport",
-			"numberDocument": "A123456789"
-		},
-		"labels": [{
-			"label" : "ORO"
-			}, {
-			"label" : "REPETIDOR"
-		}],
-		"language": "ES"
+        "phone": 3466667788,
+        "document": {
+          "typeDocument": "Passport",
+          "numberDocument": "A123456789"
+        },
+        "labels": {
+          "label": [
+            "ORO",
+            "REPETIDOR"
+          ]
+        },
+        "language": "ES"
       },
       "commission": {
-		  "serviceCommission": [{
-			"serviceId": "1",
-			"commissionAmount": "0",
-			"commissionPercentage": "0"
-		  }, {
-			"serviceId": "2",
-			"commissionAmount": "0",
-			"commissionPercentage": "0"			  
-		  }]		  
-	  },
-	  "hotelCode": "1234",
-	  "currencyCode": "EUR",
+        "serviceCommission": [
+          {
+            "serviceId": 1,
+            "commissionAmount": 0,
+            "commissionPercentage": 0
+          },
+          {
+            "serviceId": 2,
+            "commissionAmount": 0,
+            "commissionPercentage": 0
+          }
+        ]
+      },
+      "hotelCode": 1234,
+      "currencyCode": "EUR",
       "bookingRoom": [
         {
-          "id": "1",
           "checkIn": "15/04/2017",
           "checkOut": "17/04/2017",
           "status": "Confirmed",
           "roomCode": "DBL#STD",
-		  "internalRoomName" : "Nombre interno de la habitacion DBL#STD",
+          "internalRoomName": "Nombre interno de la habitacion DBL#STD",
           "mealPlanCode": "BB",
-          "amount": "350.00",
-		  "totalRoomAmount": "350.00",
-		  "commissionRoomAmount": "0.0",
-		  "netRoomAmount": "350.00",
-		  "amountRoomToInvoice": "350.00",
+          "amount": 350,
+          "totalRoomAmount": 350,
+          "commissionRoomAmount": 0,
+          "netRoomAmount": 350,
+          "amountRoomToInvoice": 350,
           "roomRateDay": [
             {
               "day": "15/04/2017",
               "rateCode": "BASE",
-			  "rateName" : "BASE VERANO",				
-			  "internalRateName" : "BARVER",
-              "amount": "116.67"
+              "rateName": "BASE VERANO",
+              "internalRateName": "BASEVER",
+              "amount": 116.67
             },
             {
               "day": "16/04/2017",
               "rateCode": "BASE",
-			  "rateName" : "BASE VERANO",				
-			  "internalRateName" : "BARVER",
-              "amount": "116.67"
+              "rateName": "BASE VERANO",
+              "internalRateName": "BASEVER",
+              "amount": 116.67
             },
             {
               "day": "17/04/2017",
               "rateCode": "BASE",
-			  "rateName" : "BASE VERANO",				
-			  "internalRateName" : "BARVER",  
-              "amount": "116.67"
+              "rateName": "BASE VERANO",
+              "internalRateName": "BASEVER",
+              "amount": 116.67
             }
           ],
           "guest": [
             {
-              "id": "1",
-			  "name": "Juan Ballester",
-			  "firstName": "Juan", 
-			  "lastName": "Ballester",
-			  "birthDate": "19/06/1993",
               "type": "Adult",
-              "amount": "175.00",
-			  "age": "33"
+              "name": "Juan Ballester",
+              "firstName": "Juan",
+              "lastName": "Ballester",
+              "birthDate": "19/06/1993",
+              "amount": 175,
+              "age": 33
             },
             {
-              "id": "2",
-	          "name": "Elena Ballester",
-			  "firstName": "Elena",
-			  "lastName": "Ballester",
-			  "birthDate": "23/08/1993",
               "type": "Adult",
-              "amount": "175.00",
-			  "age": "33"
+              "name": "Elena Ballester",
+              "firstName": "Elena",
+              "lastName": "Ballester",
+              "birthDate": "23/08/1993",
+              "amount": 175,
+              "age": 33
             }
-          ], 
-		  "cancellationData": {
-			  "cancelPenaltyPolicy":[{
-				"id": "5",
-				"timeRelevant": "false", 
-				"amount": "350.00"
-			  }]				  
-		  },
-		  "extraCustomData": {
+          ],
+          "cancellationData": {
+            "cancelPenaltyPolicy": {
+              "date": "18/05/2023 00:00",
+              "timeRelevant": false,
+              "amount": 625.25
+            }
+          },
+          "extraCustomData": {
             "customData": [
-                {
-                    "value": "HPH",
-                    "key": "CreationSystem"
-                },
-                {
-                    "value": "WEB",
-                    "key": "ParentSystem"
-                },
-                {
-                    "value": "ES",
-                    "key": "Country"
-                },
-                {
-                    "value": "PVP",
-                    "key": "PriceType"
-                }
-            ]}
+              {
+                "key": "CreationSystem",
+                "value": "HPH"
+              },
+              {
+                "key": "ParentSystem",
+                "value": "WEB"
+              },
+              {
+                "key": "Country",
+                "value": "ES"
+              },
+              {
+                "key": "PriceType",
+                "value": "PVP"
+              },
+              {
+                "key": "ClientType",
+                "value": "A"
+              }
+            ]
+          }
         },
         {
-          "id": "2",
           "checkIn": "15/04/2017",
           "checkOut": "17/04/2017",
           "status": "Confirmed",
           "roomCode": "SGL#STD",
+          "totalRoomAmount": 150,
+          "commissionRoomAmount": 0,
+          "netRoomAmount": 150,
+          "amountRoomToInvoice": 150,
+          "internalRoomName": "Nombre interno de la habitacion SGL#STD",
           "mealPlanCode": "BB",
-		  "totalRoomAmount": "150.00",
-		  "commissionRoomAmount": "0.0",
-		  "netRoomAmount": "150.00",
-		  "amountRoomToInvoice": "150.00",
-          "amount": "150.00",
+          "amount": 150,
           "roomRateDay": [
             {
               "day": "15/04/2017",
               "rateCode": "BASE",
-			  "rateName" : "BASE VERANO",				
-			  "internalRateName" : "BARVER",	  
-              "amount": "50.00"
+              "rateName": "BASE VERANO",
+              "internalRateName": "BASEVER",
+              "amount": 50
             },
             {
               "day": "16/04/2017",
               "rateCode": "BASE",
-			  "rateName" : "BASE VERANO",				
-			  "internalRateName" : "BARVER",	  
-              "amount": "50.00"
+              "rateName": "BASE VERANO",
+              "internalRateName": "BASEVER",
+              "amount": 50
             },
             {
               "day": "17/04/2017",
               "rateCode": "BASE",
-			  "rateName" : "BASE VERANO",				
-			  "internalRateName" : "BARVER",	  
-              "amount": "50.00"
+              "rateName": "BASE VERANO",
+              "internalRateName": "BASEVER",
+              "amount": 50
             }
           ],
           "guest": [
             {
-              "id": "3",
-	          "name": "Elena Ballester",
-			  "firstName": "Elena",
-			  "lastName": "Ballester",
-			  "birthDate": "23/08/1993",
               "type": "Adult",
-	          "gender": "Female",
-              "amount": "100.00",
-			  "age": "33"
+              "name": "Elena Ballester",
+              "firstName": "Elena",
+              "lastName": "Ballester",
+              "birthDate": "23/08/1993",
+              "gender": "Female",
+              "amount": 100,
+              "age": 33
             },
             {
-              "id": "4",
-			  "name": "Maria Ballester",
-			  "firstName": "Maria",
-			  "lastName": "Ballester",
-			  "birthDate": "25/03/2015",
-	          "gender": "Female",
               "type": "Child",
-              "amount": "50.00",
-			  "age": "33"
+              "name": "Maria Ballester",
+              "firstName": "Maria",
+              "lastName": "Maria",
+              "birthDate": "25/03/2015",
+              "gender": "Female",
+              "amount": 50,
+              "age": 33
             }
           ]
         }
       ],
-      "bookingSupplement": {
-        "code": "[EtT]Supplement(PpT)DEMOHTT@30621@20054@1@EUR",
-		"name" : "PARK - 1",
-		"typeSupplement": "SalePolicy",
-		"internalTypeSupplement": "SPS",
-        "description": "Suplemento Parking toda la estancia",
-        "checkIn": "15/04/2017",
-        "checkOut": "17/04/2017",
-		"bookingRoomId" : "1",
-        "amount": "50.00",
-		"mandatory": "true"
-      },
+      "bookingSupplement": [
+        {
+          "code": "[EtT]Supplement(PpT)DEMOHTT@30621@20054@1@EUR",
+          "name": "PARK - 1",
+          "typeSupplement": "SalePolicy",
+          "internalTypeSupplement": "SPS",
+          "description": "Suplemento Parking toda la estancia",
+          "checkIn": "15/04/2017",
+          "checkOut": "17/04/2017",
+          "bookingRoomId": 1,
+          "amount": 50,
+          "mandatory": true
+        },
+        {
+          "code": "[EtT]Supplement(PpT)TESTHTT@53089@21599@1@EUR",
+          "name": "TEST 2 - 1",
+          "typeSupplement": "Optional",
+          "internalTypeSupplement": "ESP",
+          "bookingRoomId": 1,
+          "amount": 10,
+          "commissionSupplementAmount": 0,
+          "netSupplementAmount": 10,
+          "mandatory": false
+        }
+      ],
       "remark": [
         {
           "code": "Informative",
@@ -633,92 +676,121 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
           "code": "Informative",
           "from": "Client",
           "to": "Hotel",
-		  "bookingRoomId" : "2",
+          "bookingRoomId": 2,
           "text": "Por favor, habitaciones no fumadores"
         },
-		{
-		  "code": "ArrivalTime",
+        {
+          "code": "ArrivalTime",
           "from": "Client",
           "to": "Hotel",
-          "text": "12:00"			
-		}
-      ],            
+          "text": "12:00"
+        }
+      ],
       "bookingPayment": {
         "modality": "Establishment",
-		"internalModalityName" : "Descripcion interna modalidad de pago",
-        "type": "WarrantyCard",
-		"otaType": "PC",
-		"description": "Tarjeta de garantía",
+        "internalModalityName": "Descripcion interna modalidad de pago",
+        "type": "PrepaidCard",
+        "otaType": "PC",
+        "description": "Tarjeta de prepago",
         "status": "Pending"
       },
       "paymentCardDetail": {
-        "holder": "Elena Ballester",
-        "number": "4111111111111111",
-        "expiryDate": "01/01/2020",
-        "securityCode": "123"
-      }, 
-	  "paymentDetail": [{
-		  "action": "Charge",
-		  "paymentStatus" : "Ok",
-		  "type": "ExternalManaged",
-		  "date": "24/01/2019 17:18",
-		  "amount": "2635.663",
-		  "externalManagedDetail": {
-			  "externalSystemCode": "TARJETA VIRTUAL",
-			  "externalReference": "5227",
-			  "status": "Ok"
-		  }, 
-		  "breakdown": [{
-			  "bookingRoomId": "1",
-			  "amount": "350.0"
-		  }, {
-			  "bookingRoomId": "2",
-			  "amount": "150.0"
-		  }]
-	  }, {
-		  "action": "Charge",
-		  "paymentStatus" : "Ok",
-		  "type": "ExternalManaged",
-		  "date": "24/01/2019 17:18",
-		  "amount": "2635.663",
-		  "prepaidCardDetail": {
-			  "status": "Pending",
-			  "card": {
-				  "cardTypeCode": "VISA",
-				  "holder": "Elena Ballester", 
-				  "number" : "4111111111111111",
-				  "expiryDate": "01/01/2020",
-				  "securityCode": "123"
-			  }
-		  },
-		  "breakdown": [{
-			  "bookingRoomId": "1",
-			  "amount": "350.0"
-		  }, {
-			  "bookingRoomId": "2",
-			  "amount": "150.0"
-		  }]
-	  }],
+        "holder": "John Smith",
+        "number": "cust_677b20db-a28b-4e2a-b3e0-da8c19e2fec3#1DCA3173-9DD0-4F2D-8420-266808C0A4EB",
+        "expiryDate": "01/10/2027"
+      },
+      "paymentDetail": [
+        {
+          "action": "Charge",
+          "paymentStatus": "Ok",
+          "type": "ExternalManaged",
+          "date": "24/01/2019 17:18",
+          "amount": 2635.663,
+          "cardDetail": {
+            "card": {
+              "holder": "John Smith",
+              "number": 5004,
+              "expiryDate": "01/10/2027"
+            },
+            "systemCode": "PNN",
+            "reference": "677b20db-a28b-4e2a-b3e0-da8c19e2fec3",
+            "authorizedCode": 75128
+          },
+          "breakdown": [
+            {
+              "bookingRoomId": 1,
+              "amount": 350
+            },
+            {
+              "bookingRoomId": 2,
+              "amount": 150
+            }
+          ]
+        },
+        {
+          "action": "Charge",
+          "paymentStatus": "Pending",
+          "type": "PrepaidCard",
+          "otaType": "PC",
+          "date": "23/07/2019 09:42",
+          "amount": 2635.66,
+          "prepaidCardDetail": {
+            "status": "Pending",
+            "card": {
+              "cardTypeCode": "Visa",
+              "holder": "Elena Ballester",
+              "number": 4111111111111111,
+              "expiryDate": "01/01/2020",
+              "securityCode": 123
+            }
+          },
+          "breakdown": [
+            {
+              "bookingRoomId": 1,
+              "amount": 350
+            },
+            {
+              "bookingRoomId": 2,
+              "amount": 150
+            }
+          ]
+        }
+      ],
       "extraCustomData": {
-            "customData": [
-                {
-                    "value": "HPH",
-                    "key": "CreationSystem"
-                },
-                {
-                    "value": "WEB",
-                    "key": "ParentSystem"
-                },
-                {
-                    "value": "ES",
-                    "key": "Country"
-                },
-                {
-                    "value": "PVP",
-                    "key": "PriceType"
-                }
-            ]
-		}
+        "customData": [
+          {
+            "key": "CreationSystem",
+            "value": "HPH"
+          },
+          {
+            "key": "ParentSystem",
+            "value": "WEB"
+          },
+          {
+            "key": "Country",
+            "value": "ES"
+          },
+          {
+            "key": "PriceType",
+            "value": "PVP"
+          },
+          {
+            "key": "ClientType",
+            "value": "A"
+          }
+        ]
+      },
+      "saleRules": {
+        "bookingRoom": {
+          "saleRulesByDay": {
+            "day": "27/11/2024",
+            "saleRule": {
+              "name": "EBB PLAYA SUMMER 0.7",
+              "percentage": -18
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -893,7 +965,7 @@ booking[] | **Booking** | No | Información de una reserva de hotel
 ↳↳ description| *String* | No | Contiene el nombre comercial asignado a a la modalidad de pago
 ↳ paymentCardDetail| **PaymentCardDetail** | No | Detalles de la tarjeta que ha realizado el último pago (sólo viene informado si bookingPayment.type es Card, PrepaidCard, VirtualCard o WarrantyCard)
 ↳↳ holder| *String* | Sí | Nombre del titular de la tarjeta
-↳↳ number| *String* | Sí | Número de la tarjeta
+↳↳ number| *String* | Sí | Número de la tarjeta tokenizada
 ↳↳ expiryDate| *Date* | Sí | Fecha de caducidad (dd/MM/yyy)
 ↳↳ securityCode| *String* | No | Código de seguridad (cvc2)
 ↳ paymentDetail[]| **PaymentDetail** | No | Log con todos los pagos realizados en la reserva
