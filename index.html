@@ -712,6 +712,12 @@ gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento 
 <td>1.1.37</td>
 <td>Actualización de ejemplos de reserva (BookingRetrievalResponse).</td>
 </tr>
+<tr>
+<td>09/04/2025</td>
+<td>Rafel Mestre</td>
+<td>1.1.38</td>
+<td>Actualización de los valores devueltos en el campo ExtraCustomData.</td>
+</tr>
 </tbody></table>
 <h1 id='protocolo-de-conexion'>Protocolo de conexión</h1>
 <ul>
@@ -5125,7 +5131,7 @@ o bien las reservas de un hotel creadas, canceladas o modificadas dentro de un r
 <tr>
 <td>CostDate</td>
 <td><em>String</em></td>
-<td>Indica la fecha en que se realizó la valoración de los costes de la reserva (dd/MM/yyyy)</td>
+<td>Indica la fecha en que se realizó la valoración de los costes de la reserva (dd/MM/yyyy). Específico de la integración con el canal TUI.</td>
 </tr>
 <tr>
 <td>CreationSystem</td>
@@ -5156,6 +5162,71 @@ o bien las reservas de un hotel creadas, canceladas o modificadas dentro de un r
 <td>WEB.HOTEL.Hotelverse.Status</td>
 <td><em>String</em></td>
 <td>Si viene informado, indica si la reserva está confirmada o no, en Hotelverse</td>
+</tr>
+<tr>
+<td>FareName</td>
+<td><em>String</em></td>
+<td>Indica el nombre de la tarifa.</td>
+</tr>
+<tr>
+<td>Touroperator</td>
+<td><em>String</em></td>
+<td>Indica el código del tour operador informado en la reserva.</td>
+</tr>
+<tr>
+<td>Hotel_Arrival</td>
+<td><em>String</em></td>
+<td>Hora informada de la llegada al hotel (HH:mm).</td>
+</tr>
+<tr>
+<td>Hotel_Departure</td>
+<td><em>String</em></td>
+<td>Hora informada de la salida del hotel (HH:mm).</td>
+</tr>
+<tr>
+<td>Room</td>
+<td><em>String</em></td>
+<td>Indica el código de la habitación en el canal de venta.</td>
+</tr>
+<tr>
+<td>CompanyCode</td>
+<td><em>String</em></td>
+<td>Específico de la integración con el canal OTS. Indica el código de la empresa facturadora de la reserva.</td>
+</tr>
+<tr>
+<td>CompanyName</td>
+<td><em>String</em></td>
+<td>Específico de la integración con el canal OTS. Indica el nombre de la empresa facturadora de la reserva.</td>
+</tr>
+<tr>
+<td>AgencyCountry</td>
+<td><em>String</em></td>
+<td>Indica el país de la agencia compradora de la reserva.</td>
+</tr>
+<tr>
+<td>AgencyAddress</td>
+<td><em>String</em></td>
+<td>Indica el domicilio de la agencia compradora de la reserva.</td>
+</tr>
+<tr>
+<td>AgencyEmail</td>
+<td><em>String</em></td>
+<td>Indica el email de la agencia compradora de la reserva.</td>
+</tr>
+<tr>
+<td>AgencyPhone</td>
+<td><em>String</em></td>
+<td>Indica el teléfono de la agencia compradora de la reserva.</td>
+</tr>
+<tr>
+<td>AgencyCode</td>
+<td><em>String</em></td>
+<td>Indica el código de la agencia compradora de la reserva.</td>
+</tr>
+<tr>
+<td>CommissionHotusaByRoom</td>
+<td><em>String</em></td>
+<td>Específico de la integración con los canales del grupo Hotusa (Keytel y Beds4Travel). Indica la comisión asociada a cada una de las habitaciones de la reserva, en caso de que sea una reserva multihabitación.</td>
 </tr>
 </tbody></table>
 
