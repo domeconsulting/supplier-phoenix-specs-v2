@@ -951,8 +951,8 @@ booking[] | **Booking** | No | Información de una reserva de hotel
 ↳↳↳↳↳ flightTime| *Calendar* | No | Indica la fecha y hora del vuelo (dd/MM/yyyy HH:mm)
 ↳ remark| **Remark** | No | Notas de la reserva
 ↳↳ code| *Enum* | Si | Código de la nota (ArrivalTime, Attachment, Informative, Warning, General)
-↳↳ from| *Enum* | Si | Indica quien notifica la nota (Hotel, Client, NetInfo)
-↳↳ to| *Enum* | Si | Indica para quien es la nota (Hotel, Client, NetInfo)
+↳↳ from| *Enum* | Si | Indica quien notifica la nota (Hotel, Client)
+↳↳ to| *Enum* | Si | Indica para quien es la nota (Hotel, Client)
 ↳↳ bookingRoomId| *String* | No | Indica a que habitación hace referencia la nota
 ↳↳ text| *String* | Si | Texto de la nota
 ↳↳ customerReference| *String* | No | Referencia del cliente
