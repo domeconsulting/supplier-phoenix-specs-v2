@@ -112,6 +112,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 		<country>ES</country>
 		<checkIn>15/04/2017</checkIn>
 		<checkOut>18/04/2017</checkOut>
+        <numPax>4</numPax>
 		<status>Confirmed</status>
 		<amount>550.00</amount>
 		<amountToInvoice>625.25</amountToInvoice>
@@ -207,6 +208,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 				<amount>175.00</amount>
 				<age>33</age>
 			</guest>
+			<numPax>2</numPax>
 			<cancellationData>
 				<cancelPenaltyPolicy id="5">
 					<date>18/05/2023 00:00</date>
@@ -290,6 +292,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 				<amount>50.00</amount>
 				<age>33</age>
 			</guest>
+			<numPax>2</numPax>
 		</bookingRoom>
 		<bookingSupplement>
 			<code>[EtT]Supplement(PpT)DEMOHTT@30621@20054@1@EUR</code>
@@ -445,6 +448,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
       "country": "ES",
       "checkIn": "15/04/2017",
       "checkOut": "18/04/2017",
+      "numPax":  "4",
       "status": "Confirmed",
       "amount": 550,
       "amountToInvoice": 625.25,
@@ -549,6 +553,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
               "age": 33
             }
           ],
+          "numPax":  "2",
           "cancellationData": {
             "cancelPenaltyPolicy": {
               "date": "18/05/2023 00:00",
@@ -640,6 +645,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
           ]
         }
       ],
+      "numPax":  "2",
       "bookingSupplement": [
         {
           "code": "[EtT]Supplement(PpT)DEMOHTT@30621@20054@1@EUR",
@@ -836,6 +842,7 @@ booking[] | **Booking** | No | Información de una reserva de hotel
 ↳ country| *String* | No | Código del país de origen de la reserva (2 letter ISO 3166). Sólo vendrá informado en la reservas propias de Hotetec
 ↳ checkIn| *Date* | Sí | Fecha de entrada (dd/MM/yyy)
 ↳ checkOut| *Date* | Sí | Fecha de salida (dd/MM/yyy)
+↳ numPax| *Integer* | Sí | Número de pasajeros total de la reserva
 ↳ status| *Enum* | Sí | Estado de la reserva (Confirmed, Cancelled, OnRequest)
 ↳ amount| *Double* | Sí | Importe total de la reserva (#.##)
 ↳ bookingClient| **BookingClient** | Sí | Información del cliente que ha realizado la reserva, refiriéndose a la agencia (Ej: Logitravel), OTA (Ej: Booking.com), o el propio hotel
@@ -907,6 +914,7 @@ booking[] | **Booking** | No | Información de una reserva de hotel
 ↳↳↳↳ addressText| *String* | No | Dirección aportada por el huésped
 ↳↳↳↳ postalCode| *String* | No | Código postal
 ↳↳ cancellationData| **CancellationData** | No| Gastos de cancelación de la habitación
+↳↳ numPax| *Integer* | Sí | Número de pasajeros de la habitación
 ↳↳↳ cancelPenaltyPolicy[]| *CancelPenaltyPolicy* | Sí | Gasto de cancelación aplicable a partir de una fecha de cancelación
 ↳↳↳↳ @id| *Integer* | Sí | Identificador del gasto de cancelación
 ↳↳↳↳ date| *Calendar* | Sí | Elemento que contiene la fecha a partir de la cual se aplican los gastos de cancelación
@@ -965,7 +973,7 @@ booking[] | **Booking** | No | Información de una reserva de hotel
 ↳↳ description| *String* | No | Contiene el nombre comercial asignado a a la modalidad de pago
 ↳ paymentCardDetail| **PaymentCardDetail** | No | Detalles de la tarjeta que ha realizado el último pago (sólo viene informado si bookingPayment.type es Card, PrepaidCard, VirtualCard o WarrantyCard)
 ↳↳ holder| *String* | Sí | Nombre del titular de la tarjeta
-↳↳ number| *String* | Sí | Número de la tarjeta tokenizada
+↳↳ number| *String* | Sí | Número de la tarjeta tokenizado
 ↳↳ expiryDate| *Date* | Sí | Fecha de caducidad (dd/MM/yyy)
 ↳↳ securityCode| *String* | No | Código de seguridad (cvc2)
 ↳ paymentDetail[]| **PaymentDetail** | No | Log con todos los pagos realizados en la reserva
