@@ -718,6 +718,12 @@ gestionando el hotel a través de la extranet web. Ambos modos de mantenimiento 
 <td>1.1.38</td>
 <td>Actualización de los valores devueltos en el campo ExtraCustomData.</td>
 </tr>
+<tr>
+<td>19/09/2025</td>
+<td>Rafel Mestre</td>
+<td>1.1.39</td>
+<td>Se añade el campo method a nivel de paymentDetail.</td>
+</tr>
 </tbody></table>
 <h1 id='protocolo-de-conexion'>Protocolo de conexión</h1>
 <ul>
@@ -2999,6 +3005,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
             <span class="nt">&lt;action&gt;</span>Charge<span class="nt">&lt;/action&gt;</span>
             <span class="nt">&lt;paymentStatus&gt;</span>Ok<span class="nt">&lt;/paymentStatus&gt;</span>
             <span class="nt">&lt;type&gt;</span>ExternalManaged<span class="nt">&lt;/type&gt;</span>
+            <span class="nt">&lt;method&gt;</span>Card<span class="nt">&lt;/method&gt;</span>
             <span class="nt">&lt;date&gt;</span>24/01/2019 17:18<span class="nt">&lt;/date&gt;</span>
             <span class="nt">&lt;amount&gt;</span>2635.663<span class="nt">&lt;/amount&gt;</span>
             <span class="nt">&lt;cardDetail&gt;</span>
@@ -3024,6 +3031,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
             <span class="nt">&lt;action&gt;</span>Charge<span class="nt">&lt;/action&gt;</span>
             <span class="nt">&lt;paymentStatus&gt;</span>Pending<span class="nt">&lt;/paymentStatus&gt;</span>
             <span class="nt">&lt;type&gt;</span>PrepaidCard<span class="nt">&lt;/type&gt;</span>
+            <span class="nt">&lt;method&gt;</span>Card<span class="nt">&lt;/method&gt;</span>
             <span class="nt">&lt;otaType&gt;</span>PC<span class="nt">&lt;/otaType&gt;</span>
             <span class="nt">&lt;date&gt;</span>23/07/2019 09:42<span class="nt">&lt;/date&gt;</span>
             <span class="nt">&lt;amount&gt;</span>2635.66<span class="nt">&lt;/amount&gt;</span>
@@ -3353,6 +3361,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
           </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Charge"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"paymentStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExternalManaged"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Card"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24/01/2019 17:18"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">2635.663</span><span class="p">,</span><span class="w">
           </span><span class="nl">"cardDetail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -3380,6 +3389,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
           </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Charge"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"paymentStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pending"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PrepaidCard"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Card"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"otaType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PC"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23/07/2019 09:42"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">2635.66</span><span class="p">,</span><span class="w">
@@ -4400,6 +4410,12 @@ o bien las reservas de un hotel creadas, canceladas o modificadas dentro de un r
 <td><em>String</em></td>
 <td>Sí</td>
 <td>Código del tipo de pago (Establishment / Inmediate / Deferred / CancelPenalty / Instalment / ExternManagement)</td>
+</tr>
+<tr>
+<td>↳↳ method</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Código del método de pago que se usará en el sistema externo (Card / ApplePay / GooglePay / PayPal / ExternalWebsite / Bizum)</td>
 </tr>
 <tr>
 <td>↳↳ otaType</td>
@@ -5508,6 +5524,7 @@ De esta forma, se evitan posibles problemas de overbooking al tener la informaci
             <span class="nt">&lt;action&gt;</span>Charge<span class="nt">&lt;/action&gt;</span>
             <span class="nt">&lt;paymentStatus&gt;</span>Inapplicable<span class="nt">&lt;/paymentStatus&gt;</span>
             <span class="nt">&lt;type&gt;</span>Card<span class="nt">&lt;/type&gt;</span>
+            <span class="nt">&lt;method&gt;</span>Card<span class="nt">&lt;/method&gt;</span>
             <span class="nt">&lt;date&gt;</span>06/07/2022 12:25<span class="nt">&lt;/date&gt;</span>
             <span class="nt">&lt;cardDetail&gt;</span>
                 <span class="nt">&lt;status&gt;</span>Inapplicable<span class="nt">&lt;/status&gt;</span>
@@ -5524,6 +5541,7 @@ De esta forma, se evitan posibles problemas de overbooking al tener la informaci
             <span class="nt">&lt;action&gt;</span>Charge<span class="nt">&lt;/action&gt;</span>
             <span class="nt">&lt;paymentStatus&gt;</span>Ok<span class="nt">&lt;/paymentStatus&gt;</span>
             <span class="nt">&lt;type&gt;</span>ExternalManaged<span class="nt">&lt;/type&gt;</span>
+            <span class="nt">&lt;method&gt;</span>Card<span class="nt">&lt;/method&gt;</span>
             <span class="nt">&lt;date&gt;</span>02/08/2022 09:43<span class="nt">&lt;/date&gt;</span>
             <span class="nt">&lt;amount&gt;</span>500<span class="nt">&lt;/amount&gt;</span>
             <span class="nt">&lt;externalManagedDetail&gt;</span>
@@ -5630,6 +5648,7 @@ De esta forma, se evitan posibles problemas de overbooking al tener la informaci
           </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Charge"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"paymentStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Inapplicable"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Card"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Card"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"06/07/2022 12:25"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"cardDetail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Inapplicable"</span><span class="p">,</span><span class="w">
@@ -5646,6 +5665,7 @@ De esta forma, se evitan posibles problemas de overbooking al tener la informaci
           </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Charge"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"paymentStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExternalManaged"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Card"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/08/2022 09:43"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"externalManagedDetail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -6576,6 +6596,12 @@ De esta forma, se evitan posibles problemas de overbooking al tener la informaci
 <td>Código del tipo de pago (Establishment / Inmediate / Deferred / CancelPenalty / Instalment / ExternManagement)</td>
 </tr>
 <tr>
+<td>↳↳ method</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Código del método de pago que se usará en el sistema externo (Card / ApplePay / GooglePay / PayPal / ExternalWebsite / Bizum)</td>
+</tr>
+<tr>
 <td>↳↳ otaType</td>
 <td><em>Enum</em></td>
 <td>No</td>
@@ -7288,6 +7314,7 @@ De esta forma, se evitan posibles problemas de overbooking al tener la informaci
             <span class="nt">&lt;action&gt;</span>Charge<span class="nt">&lt;/action&gt;</span>
             <span class="nt">&lt;paymentStatus&gt;</span>Pending<span class="nt">&lt;/paymentStatus&gt;</span>
             <span class="nt">&lt;type&gt;</span>BankTransfer<span class="nt">&lt;/type&gt;</span>
+            <span class="nt">&lt;method&gt;</span>Card<span class="nt">&lt;/method&gt;</span>
             <span class="nt">&lt;date&gt;</span>26/03/2024 00:00<span class="nt">&lt;/date&gt;</span>
             <span class="nt">&lt;amount&gt;</span>30.28<span class="nt">&lt;/amount&gt;</span>
             <span class="nt">&lt;breakdown&gt;</span>
@@ -7500,6 +7527,7 @@ De esta forma, se evitan posibles problemas de overbooking al tener la informaci
         </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Charge"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"paymentStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pending"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BankTransfer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Card"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26/03/2024 00:00"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">30.28</span><span class="p">,</span><span class="w">
         </span><span class="nl">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -8393,6 +8421,12 @@ De esta forma, se evitan posibles problemas de overbooking al tener la informaci
 <td><em>String</em></td>
 <td>Sí</td>
 <td>Código del tipo de pago (Establishment / Inmediate / Deferred / CancelPenalty / Instalment / ExternManagement)</td>
+</tr>
+<tr>
+<td>↳↳ method</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Código del método de pago que se usará en el sistema externo (Card / ApplePay / GooglePay / PayPal / ExternalWebsite / Bizum)</td>
 </tr>
 <tr>
 <td>↳↳ otaType</td>
@@ -9315,6 +9349,7 @@ De esta forma, se evitan posibles problemas de overbooking al tener la informaci
             <span class="nt">&lt;action&gt;</span>Charge<span class="nt">&lt;/action&gt;</span>
             <span class="nt">&lt;paymentStatus&gt;</span>Pending<span class="nt">&lt;/paymentStatus&gt;</span>
             <span class="nt">&lt;type&gt;</span>BankTransfer<span class="nt">&lt;/type&gt;</span>
+            <span class="nt">&lt;method&gt;</span>Card<span class="nt">&lt;/method&gt;</span>
             <span class="nt">&lt;date&gt;</span>26/03/2024 00:00<span class="nt">&lt;/date&gt;</span>
             <span class="nt">&lt;amount&gt;</span>30.28<span class="nt">&lt;/amount&gt;</span>
             <span class="nt">&lt;breakdown&gt;</span>
@@ -9527,6 +9562,7 @@ De esta forma, se evitan posibles problemas de overbooking al tener la informaci
         </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Charge"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"paymentStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pending"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BankTransfer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Card"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26/03/2024 00:00"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">30.28</span><span class="p">,</span><span class="w">
         </span><span class="nl">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -10528,6 +10564,12 @@ De esta forma, se evitan posibles problemas de overbooking al tener la informaci
 <td><em>String</em></td>
 <td>Sí</td>
 <td>Código del tipo de pago (Establishment / Inmediate / Deferred / CancelPenalty / Instalment / ExternManagement)</td>
+</tr>
+<tr>
+<td>↳↳ method</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Código del método de pago que se usará en el sistema externo (Card / ApplePay / GooglePay / PayPal / ExternalWebsite / Bizum)</td>
 </tr>
 <tr>
 <td>↳↳ otaType</td>
