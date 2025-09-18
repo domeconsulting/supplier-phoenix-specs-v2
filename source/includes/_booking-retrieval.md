@@ -353,6 +353,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 			<action>Charge</action>
 			<paymentStatus>Ok</paymentStatus>
 			<type>ExternalManaged</type>
+			<method>Card</method>
 			<date>24/01/2019 17:18</date>
 			<amount>2635.663</amount>
 			<cardDetail>
@@ -378,6 +379,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 			<action>Charge</action>
 			<paymentStatus>Pending</paymentStatus>
 			<type>PrepaidCard</type>
+			<method>Card</method>
 			<otaType>PC</otaType>
 			<date>23/07/2019 09:42</date>
 			<amount>2635.66</amount>
@@ -710,6 +712,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
           "action": "Charge",
           "paymentStatus": "Ok",
           "type": "ExternalManaged",
+		  "method": "Card",
           "date": "24/01/2019 17:18",
           "amount": 2635.663,
           "cardDetail": {
@@ -737,6 +740,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
           "action": "Charge",
           "paymentStatus": "Pending",
           "type": "PrepaidCard",
+		  "method": "Card",
           "otaType": "PC",
           "date": "23/07/2019 09:42",
           "amount": 2635.66,
@@ -980,6 +984,7 @@ booking[] | **Booking** | No | Información de una reserva de hotel
 ↳↳ action| *String* | Sí | Tipo de operación (charge / refund)
 ↳↳ paymentStatus| *String* | Sí | Estado del pago (Pending / Ok / Error / Cancelled / Inapplicable)
 ↳↳ type| *String* | Sí | Código del tipo de pago (Establishment / Inmediate / Deferred / CancelPenalty / Instalment / ExternManagement)
+↳↳ method| *String* | No | Código del método de pago que se usará en el sistema externo (Card / ApplePay / GooglePay / PayPal / ExternalWebsite / Bizum)
 ↳↳ otaType| *Enum* | No | Tipo de pago OTA (PA: Agency prepaid/PC: Customer prepaid/PD: Customer payment/PB: Voucher Payment/FC: Credit invoice/PM: Loyalty points + money PU: Loyalty Points/SC: By contract/SD: OTA Virtual card/NN: TPV pending/AW: Prepaid TPV with AMEX/VW: Prepaid TPV NO AMEX)
 ↳↳ date| *Calendar* | Sí | Fecha de la transacción
 ↳↳ amount| *Double* | Sí | Importe (#.##)

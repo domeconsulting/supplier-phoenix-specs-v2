@@ -45,3 +45,4 @@ Fecha | Autor | Versión | Cambios realizados
 11/12/2024 | Rafel Mestre | 1.1.36 | Envío de las etiquetas asignadas a la persona de contacto de la reserva
 09/04/2025 | Rafel Mestre | 1.1.37 | Actualización de ejemplos de reserva (BookingRetrievalResponse).
 09/04/2025 | Rafel Mestre | 1.1.38 | Actualización de los valores devueltos en el campo ExtraCustomData.
+19/09/2025 | Rafel Mestre | 1.1.39 | Se añade el campo method a nivel de paymentDetail.

@@ -215,6 +215,7 @@
             <action>Charge</action>
             <paymentStatus>Inapplicable</paymentStatus>
             <type>Card</type>
+			<method>Card</method>
             <date>06/07/2022 12:25</date>
             <cardDetail>
                 <status>Inapplicable</status>
@@ -231,6 +232,7 @@
             <action>Charge</action>
             <paymentStatus>Ok</paymentStatus>
             <type>ExternalManaged</type>
+			<method>Card</method>
             <date>02/08/2022 09:43</date>
             <amount>500</amount>
             <externalManagedDetail>
@@ -340,6 +342,7 @@
           "action": "Charge",
           "paymentStatus": "Inapplicable",
           "type": "Card",
+		  "method": "Card",
           "date": "06/07/2022 12:25",
           "cardDetail": {
             "status": "Inapplicable",
@@ -356,6 +359,7 @@
           "action": "Charge",
           "paymentStatus": "Ok",
           "type": "ExternalManaged",
+		  "method": "Card",
           "date": "02/08/2022 09:43",
           "amount": "500",
           "externalManagedDetail": {
@@ -586,6 +590,7 @@ booking | **Booking** | No | Información de una reserva de hotel
 ↳↳ action| *String* | Sí | Tipo de operación (charge / refund)
 ↳↳ paymentStatus| *String* | Sí | Estado del pago (Pending / Ok / Error / Cancelled / Inapplicable)
 ↳↳ type| *String* | Sí | Código del tipo de pago (Establishment / Inmediate / Deferred / CancelPenalty / Instalment / ExternManagement)
+↳↳ method| *String* | No | Código del método de pago que se usará en el sistema externo (Card / ApplePay / GooglePay / PayPal / ExternalWebsite / Bizum)
 ↳↳ otaType| *Enum* | No | Tipo de pago OTA (PA: Agency prepaid/PC: Customer prepaid/PD: Customer payment/PB: Voucher Payment/FC: Credit invoice/PM: Loyalty points + money PU: Loyalty Points/SC: By contract/SD: OTA Virtual card/NN: TPV pending/AW: Prepaid TPV with AMEX/VW: Prepaid TPV NO AMEX)
 ↳↳ date| *Calendar* | Sí | Fecha de la transacción
 ↳↳ amount| *Double* | Sí | Importe (#.##)

@@ -236,6 +236,7 @@
             <action>Charge</action>
             <paymentStatus>Pending</paymentStatus>
             <type>BankTransfer</type>
+			<method>Card</method>
             <date>26/03/2024 00:00</date>
             <amount>30.28</amount>
             <breakdown>
@@ -451,6 +452,7 @@
         "action": "Charge",
         "paymentStatus": "Pending",
         "type": "BankTransfer",
+		"method": "Card",
         "date": "26/03/2024 00:00",
         "amount": 30.28,
         "breakdown": {
@@ -709,6 +711,7 @@ booking | **Booking** | No | Información de una reserva de hotel
 ↳↳ action| *String* | Sí | Tipo de operación (charge / refund)
 ↳↳ paymentStatus| *String* | Sí | Estado del pago (Pending / Ok / Error / Cancelled / Inapplicable)
 ↳↳ type| *String* | Sí | Código del tipo de pago (Establishment / Inmediate / Deferred / CancelPenalty / Instalment / ExternManagement)
+↳↳ method| *String* | No | Código del método de pago que se usará en el sistema externo (Card / ApplePay / GooglePay / PayPal / ExternalWebsite / Bizum)
 ↳↳ otaType| *Enum* | No | Tipo de pago OTA (PA: Agency prepaid/PC: Customer prepaid/PD: Customer payment/PB: Voucher Payment/FC: Credit invoice/PM: Loyalty points + money PU: Loyalty Points/SC: By contract/SD: OTA Virtual card/NN: TPV pending/AW: Prepaid TPV with AMEX/VW: Prepaid TPV NO AMEX)
 ↳↳ date| *Calendar* | Sí | Fecha de la transacción
 ↳↳ amount| *Double* | Sí | Importe (#.##)
