@@ -855,8 +855,8 @@ clientReference | *String* | No<sup>1</sup> | Localizador externo de la reserva
 hotelCode | *Integer* | Sí | Código de hotel
 dateFrom | *DateTime* | No<sup>1</sup> | Fecha desde. Devolverá todas las reservas que se hayan creado, cancelado o modificado a partir de esta fecha (dd/MM/yyy HH:mm)
 dateTo | *DateTime* | No<sup>1</sup> | Fecha hasta. Devolverá todas las reservas que se hayan creado, cancelado o modificado hasta esta fecha (dd/MM/yyy HH:mm)
-checkInDateFrom | *DateTime* | No<sup>1</sup>, <sup>3</sup> | Fecha de checkIn desde. Devolverá todas las reservas cuya fecha de checkIn sea a partir de esta fecha (dd/MM/yyy HH:mm)
-checkInDateTo | *DateTime* | No<sup>1</sup>, <sup>3</sup> | Fecha de checkIn hasta. Devolverá todas las reservas cuya fecha de checkIn sea hasta esta fecha (dd/MM/yyy HH:mm)
+checkInDateFrom | *DateTime* | No<sup>1</sup>,<sup>3</sup> | Fecha de checkIn desde. Devolverá todas las reservas cuya fecha de checkIn sea a partir de esta fecha (dd/MM/yyy HH:mm)
+checkInDateTo | *DateTime* | No<sup>1</sup>,<sup>3</sup> | Fecha de checkIn hasta. Devolverá todas las reservas cuya fecha de checkIn sea hasta esta fecha (dd/MM/yyy HH:mm)
 notificationStatus | *Enum* | No<sup>1</sup> | Filtro por estado de notificación de reserva (Delivered: Notificada / UnDelivered: No notificada) No<sup>2</sup>
 
 <aside class="notice">
