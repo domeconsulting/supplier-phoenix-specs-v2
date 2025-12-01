@@ -98,6 +98,40 @@
 }
 ````
 
+> Ejemplo BookingRetrievalRequest para para recuperar las reservas de un hotel en un determinado rango de fechas de checkIn
+&nbsp;&nbsp;<span class="postman-button">[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/495ff7995b655b745365)</span>
+
+````xml
+<?xml version="1.0" encoding="UTF-8"?>
+<BookingRetrievalRequest>
+    <credentials>
+        <systemCode>SFO</systemCode>
+        <vendorCode>FOO</vendorCode>
+        <user>BAR</user>
+        <password>FOOBAR</password>
+    </credentials>   
+    <hotelCode>1234</hotelCode>
+    <checkInDateFrom>10/03/2017 14:30</dateFrom>
+    <checkInDateTo>10/03/2017 15:00</dateTo>
+</BookingRetrievalRequest>
+````
+
+````json
+{
+  "BookingRetrievalRequest": {
+    "credentials": {
+      "systemCode": "SFO",
+      "vendorCode": "FOO",
+      "user": "BAR",
+      "password": "FOOBAR"
+    },
+    "hotelCode": "1234",
+    "checkInDateFrom": "10/03/2017 14:30",
+    "checkInDateTo": "10/03/2017 15:00"
+  }
+}
+````
+
 > Ejemplo respuesta BookingRetrievalResponse procesada correctamente
 La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
 
@@ -821,6 +855,8 @@ clientReference | *String* | No<sup>1</sup> | Localizador externo de la reserva
 hotelCode | *Integer* | Sí | Código de hotel
 dateFrom | *DateTime* | No<sup>1</sup> | Fecha desde. Devolverá todas las reservas que se hayan creado, cancelado o modificado a partir de esta fecha (dd/MM/yyy HH:mm)
 dateTo | *DateTime* | No<sup>1</sup> | Fecha hasta. Devolverá todas las reservas que se hayan creado, cancelado o modificado hasta esta fecha (dd/MM/yyy HH:mm)
+checkInDateFrom | *DateTime* | No<sup>1</sup>, <sup>3</sup> | Fecha de checkIn desde. Devolverá todas las reservas cuya fecha de checkIn sea a partir de esta fecha (dd/MM/yyy HH:mm)
+checkInDateTo | *DateTime* | No<sup>1</sup>, <sup>3</sup> | Fecha de checkIn hasta. Devolverá todas las reservas cuya fecha de checkIn sea hasta esta fecha (dd/MM/yyy HH:mm)
 notificationStatus | *Enum* | No<sup>1</sup> | Filtro por estado de notificación de reserva (Delivered: Notificada / UnDelivered: No notificada) No<sup>2</sup>
 
 <aside class="notice">
@@ -829,6 +865,10 @@ notificationStatus | *Enum* | No<sup>1</sup> | Filtro por estado de notificació
 
 <aside class="notice">
 <sup>2</sup>&nbsp;&nbsp;&nbsp;Si no se informa, se devolverán todas las reservas sea cual sea su estado. Una reserva se marca como notificada cuando se entrega vía PUSH o bien se devuelve en alguna respuesta BookingRetrievalResponse.
+</aside>
+
+<aside class="notice">
+<sup>3</sup>&nbsp;&nbsp;&nbsp;Las fechas de checkIn se pueden combinar con las fechas de dateFrom y dateTo para poder devolver reservas más concretas.
 </aside>
 
 ### BookingRetrievalResponse

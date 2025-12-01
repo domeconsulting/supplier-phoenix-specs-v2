@@ -46,3 +46,4 @@ Fecha | Autor | Versión | Cambios realizados
 09/04/2025 | Rafel Mestre | 1.1.37 | Actualización de ejemplos de reserva (BookingRetrievalResponse).
 09/04/2025 | Rafel Mestre | 1.1.38 | Actualización de los valores devueltos en el campo ExtraCustomData.
 19/09/2025 | Rafel Mestre | 1.1.39 | Se añade el campo method a nivel de paymentDetail.
+01/12/2025 | Rafel Mestre | 1.1.40 | Se añaden los nuevos filtros (checkInDateFrom y checkInDateTo) en la petición de recuperación de reservas, para obtener las reservas por fecha de checkIn.
